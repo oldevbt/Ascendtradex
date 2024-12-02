@@ -19,3 +19,18 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  .btn {
+    @apply bg-blue-400 h-[60px] px-4 rounded-full hover:bg-blue-400 transition flex items-center text-lg font-medium outline-none;
+  }
+  .section {
+    @apply py-12 lg:py-24;
+  }
+  .section-title {
+    @apply text-2xl lg:text-[40px] font-poppins font-extrabold leading-normal mb-6;
+  }
+  .section-subtitle {
+    @apply mt-6 mb-8 text-gray-200 font-poppins;
+  }
+}
