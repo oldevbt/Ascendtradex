@@ -5,7 +5,7 @@ import PhoneTrade from "@/assets/phone-trade.png";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ClipLoader } from "react-spinners"; // Import the spinner
+import { RingLoader } from "react-spinners"; // Import the spinner
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -265,7 +265,7 @@ const SignUpPage = () => {
               disabled={loading} // Disable the button when loading
             >
               {loading ? (
-                <ClipLoader color="white" loading={loading} size={24} /> // Show spinner when loading
+                <RingLoader color="white" loading={loading} size={24} /> // Show spinner when loading
               ) : (
                 "Sign Up"
               )}
