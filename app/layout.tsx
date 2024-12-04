@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Syne, Poppins, Inter } from "next/font/google";
 import "./globals.css";
+import ToasterProvider from "./providers/ToastProvider";
 
 // Google Fonts
 const syne = Syne({
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body
         className={` ${syne.variable} ${poppins.variable} ${inter.variable} antialiased`}
       >
+        <ToasterProvider />
         {children}
       </body>
     </html>

@@ -29,29 +29,6 @@ export default async function handler(
       .json({ message: "Session expired. Please log in again." });
   }
 
-  const { hasActiveSubscription, role } = session.user as {
-    hasActiveSubscription: boolean;
-    role: "USER" | "ADMIN";
-  };
-
-  console.log("[API] User Info:", {
-    email: session.user.email,
-    role,
-    hasActiveSubscription,
-  });
-
-  if (!hasActiveSubscription) {
-    console.log("[API Response] Subscription inactive");
-    return res
-      .status(403)
-      .json({ message: "You need an active subscription to access this page" });
-  }
-
-  if (role !== "ADMIN") {
-    console.log("[API Response] Access denied. Non-admin user");
-    return res.status(403).json({ message: "Access denied. Admins only" });
-  }
-
   console.log("[API Response] User authorized");
   return res.status(200).json({ message: "Authorized" });
 }

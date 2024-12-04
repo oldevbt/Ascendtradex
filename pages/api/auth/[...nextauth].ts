@@ -49,9 +49,8 @@ export const authOptions: AuthOptions = {
         return {
           id: user.id,
           email: user.email,
-          name: user.name || "",
-          role: (user.role as "USER" | "ADMIN") || "USER",
-          hasActiveSubscription: user.hasActiveSubscription ?? false,
+          name: user.firstName || "",
+
           emailVerified: user.emailVerified,
           image: user.image,
         };
@@ -72,8 +71,6 @@ export const authOptions: AuthOptions = {
         token.id = user.id;
         token.email = user.email;
         token.name = user.name;
-        token.role = user.role || "USER";
-        token.hasActiveSubscription = user.hasActiveSubscription ?? false;
 
         // Set token expiration to 30 minutes from the current time (in seconds)
         token.exp = Math.floor(Date.now() / 1000) + 5 * 60; // 30 minutes
@@ -100,8 +97,6 @@ export const authOptions: AuthOptions = {
           id: token.id as string,
           email: token.email as string,
           name: token.name as string,
-          role: token.role as "USER" | "ADMIN",
-          hasActiveSubscription: token.hasActiveSubscription as boolean,
         };
 
         // Get the current time in seconds

@@ -3,12 +3,16 @@
 import { BsBoxArrowInUpRight, BsBoxArrowRight } from "react-icons/bs";
 import { CgClose } from "react-icons/cg";
 import { useEffect, useState } from "react";
-import { QRCodeSVG } from "qrcode.react";
 
 import Chart from "./_components/Chart";
 import Symbol from "./_components/SymbolOverview";
 import BalanceCard from "./_components/BalanceCard";
 import WalletSection from "./_components/WalletSection";
+import LitecoinImage from "@/assets/barcode/Usdt TRC20Exodus.jpg";
+import EthereumImage from "@/assets/barcode/ExodusEth.jpg";
+import UsdtTrc20Image from "@/assets/barcode/LITEExodus.jpg";
+import Image from "next/image";
+import { StaticImageData } from "next/image";
 
 // Define allowed deposit methods
 type DepositMethods = "Litecoin" | "ethereum" | "usdt-trc20" | "usdt-erc20";
@@ -19,6 +23,14 @@ const walletAddresses: Record<DepositMethods, string> = {
   ethereum: "0xC3070FF3E6dB5201BB36C7838c392616662D4416",
   "usdt-trc20": "TVgB9AnQsLhSvPxjqPbqCn1Lu3YM3Prq4Q",
   "usdt-erc20": "0xC3070FF3E6dB5201BB36C7838c392616662D4416",
+};
+
+// Wallet image URLs for each method
+const walletImages: Record<DepositMethods, StaticImageData> = {
+  Litecoin: LitecoinImage,
+  ethereum: EthereumImage,
+  "usdt-trc20": UsdtTrc20Image,
+  "usdt-erc20": UsdtTrc20Image,
 };
 
 const Dashboard = () => {
@@ -35,6 +47,11 @@ const Dashboard = () => {
     return selectedMethod
       ? walletAddresses[selectedMethod]
       : "No address available";
+  };
+
+  // Get wallet image URL based on selected method
+  const getWalletImage = () => {
+    return selectedMethod ? walletImages[selectedMethod] : "";
   };
 
   // Ensure client-side rendering
@@ -127,11 +144,10 @@ const Dashboard = () => {
                           }
                         >
                           <option value="">Select Deposit Method</option>
-                          <option value="bitcoin">Bitcoin</option>
+                          <option value="Litecoin">Litecoin</option>
                           <option value="ethereum">Ethereum</option>
                           <option value="usdt-trc20">USDT TRC20</option>
                           <option value="usdt-erc20">USDT ERC20</option>
-                          <option value="usdc-erc20">USDC ERC20</option>
                         </select>
                       </div>
 
@@ -168,11 +184,11 @@ const Dashboard = () => {
                       </h3>
 
                       <div className="flex justify-center mb-4">
-                        <QRCodeSVG
-                          value={getWalletAddress()}
-                          size={150}
-                          bgColor="#1F2129"
-                          fgColor="#ffffff"
+                        {/* Display wallet image */}
+                        <Image
+                          src={getWalletImage()}
+                          alt="Wallet"
+                          className="w-32 h-32 object-contain"
                         />
                       </div>
 

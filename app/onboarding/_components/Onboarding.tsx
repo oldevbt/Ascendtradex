@@ -1,31 +1,37 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter
 import Step1 from "./OnboardingOne";
 import Step2 from "./OnboardingTwo";
-
 import Step3 from "./OnboardingFour";
 import Step4 from "./OnboardingFive";
 import Step5 from "./OnboardingSix";
 import Step6 from "./OnboardingSeven";
-import Step7 from "./OnboardingEight";
 
-const steps = [Step1, Step2, Step4, Step5, Step6, Step7];
+const steps = [Step1, Step2, Step3, Step4, Step5, Step6];
 
 const Onboarding: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const router = useRouter(); // Initialize useRouter
 
   const CurrentStepComponent = steps[currentStep];
 
   const handleNext = () => {
-    if (currentStep < steps.length - 1) setCurrentStep(currentStep + 1);
+    if (currentStep < steps.length - 1) {
+      setCurrentStep(currentStep + 1);
+    } else {
+      router.push("/dashboard"); // Redirect to the dashboard on the last step
+    }
   };
 
   const handlePrevious = () => {
-    if (currentStep > 0) setCurrentStep(currentStep - 1);
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen ">
+    <div className="flex items-center justify-center min-h-screen">
       <div className="w-[600px] min-h-[500px] max-h-[700px] flex flex-col bg-[#242731] shadow-lg p-6 rounded-3xl relative overflow-y-auto">
         {/* Step Number */}
         <div className="absolute top-4 left-4 text-gray-400 mt-3 text-sm">
@@ -56,10 +62,11 @@ const Onboarding: React.FC = () => {
               </button>
               <button
                 onClick={handleNext}
-                disabled={currentStep === steps.length - 1}
-                className="px-6 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                className={`px-6 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 ${
+                  currentStep === steps.length - 1 ? "disabled:opacity-50" : ""
+                }`}
               >
-                Next
+                {currentStep === steps.length - 1 ? "Finish" : "Next"}
               </button>
             </>
           )}

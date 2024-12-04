@@ -55,7 +55,7 @@ export async function POST(req: Request) {
       to: email, // Recipient email
       subject: "Password Reset Code",
       html: `
-        <p>Hi ${user.name || "User"},</p>
+        <p>Hi ${user.firstName || "User"},</p>
         <p>We received a request to reset your password. Use the code below to proceed:</p>
         <h2>${resetCode}</h2>
         <p>This code will expire in 1 hour. If you did not request a password reset, please ignore this email.</p>

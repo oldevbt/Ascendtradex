@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -15,11 +17,12 @@ import StepsSection from "./components/StepsSection";
 import TradeScanners from "./components/Traderscanners";
 import BrokerStatement from "./components/BrokerStatement";
 import PaymentOptions from "./components/PaymentOptions";
+import VoiceflowWidget from "./components/VoiceflowWidget"; // Import the widget
 
 export default function Home() {
   return (
     <div className="bg-[#101828]">
-      <div className=" bg-custom-gradient  h-screen">
+      <div className="bg-custom-gradient h-screen">
         <Header />
         <Hero />
       </div>
@@ -30,14 +33,16 @@ export default function Home() {
         <Features />
         <FeatureTwo />
         <Feature3 />
-
         <StepsSection />
         <BrokerStatement />
         <TradeScanners />
+        <VoiceflowWidget />
         <PaymentOptions />
         <Logo />
+
         <Footer />
       </div>
+      {/* Add the Voiceflow Widget */}
     </div>
   );
 }
