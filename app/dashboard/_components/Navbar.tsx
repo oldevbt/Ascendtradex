@@ -2,7 +2,7 @@ import { FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center bg-gray-900 text-white p-4">
+    <div className="hidden md:flex justify-between items-center bg-gray-900 text-white p-4">
       <div>
         <input
           type="text"

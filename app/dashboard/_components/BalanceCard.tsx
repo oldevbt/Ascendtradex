@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const BalanceCard = ({}) => (
-  <div className="flex flex-col font-poppins space-y-1 py-4">
+  <div className="flex flex-col font-poppins space-y-1 py-4 px-8">
     <h1 className="font-bold text-[18px]">Total Balance</h1>
     <h1 className="text-[40px] font-bold">
       $ 0.00{" "}

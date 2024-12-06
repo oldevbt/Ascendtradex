@@ -9,7 +9,7 @@ const OnboardingSeven: React.FC = () => {
 
   return (
     <div className=" flex items-center justify-center  text-white px-4">
-      <div className=" p-10  w-full max-w-2xl">
+      <div className=" py-10   w-full max-w-2xl">
         <h2 className="text-2xl font-bold mb-6">Investor Type</h2>
         <p className="text-md text-gray-400 mb-8">
           It is important to know the kind of investor you are to help us

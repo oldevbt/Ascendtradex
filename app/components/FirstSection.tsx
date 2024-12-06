@@ -9,14 +9,14 @@ const FirstSection = () => {
   return (
     <div className="bg-[#0f1123]  text-white min-h-screen">
       {/* Hero Section */}
-      <section className="text-center py-16  mt-10 px-6">
-        <h2 className="text-purple-400 font-syne text-3xl font-semibold mb-2">
-          Discover the advantages of choosing TitanTradex,
+      <section className="text-center py-8 sm:py-16 mt-6 sm:mt-10 px-4 sm:px-6">
+        <h2 className="text-purple-400 font-syne text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">
+          Discover the advantages of choosing TitanTradex
         </h2>
-        <h1 className="text-5xl font-bold font-poppins  mb-3">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-poppins mb-4 sm:mb-6">
           The world's leading online financial derivatives broker
         </h1>
-        <p className="text-gray-400  text-lg font-poppins  max-w-3xl mx-auto mb-12">
+        <p className="text-gray-400 text-base sm:text-lg font-poppins max-w-lg sm:max-w-3xl mx-auto mb-8 sm:mb-12">
           With over 1 million satisfied clients, our track record speaks for
           itself. Benefit from our extensive experience in delivering profitable
           trading experiences, offering bespoke trading accounts, instant

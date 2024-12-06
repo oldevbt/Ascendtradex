@@ -8,8 +8,8 @@ const OnboardingFour: React.FC = () => {
   };
 
   return (
-    <div className=" flex items-center justify-center  text-white px-4">
-      <div className=" p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div className=" flex items-center justify-center  text-white ">
+      <div className=" py-8 rounded-lg shadow-lg w-full max-w-md">
         {/* Title */}
         <h2 className="text-xl font-bold mb-2">
           Why do you want to Invest in Stock Exchange?

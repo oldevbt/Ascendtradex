@@ -17,14 +17,16 @@ const KycVerification = () => {
   return (
     <div className="bg-gray-900 font-poppins min-h-screen">
       <div className="mb-6">
-        <h1 className="p-6 text-3xl">KYC Verification</h1>
-        <p className="px-6 text-xl">
+        <h1 className="p-6 text-3xl text-center md:text-left">
+          KYC Verification
+        </h1>
+        <p className="px-6 text-xl text-center md:text-left">
           To comply with regulation, each participant will have to go through
           identity verification (KYC/AML) to prevent fraud causes.
         </p>
       </div>
-      <div className="flex flex-col mt-40 items-center justify-center">
-        <div className="bg-gray-800 p-8 rounded-lg shadow-md max-w-5xl w-full h-96 text-left">
+      <div className="flex flex-col mt-10 md:mt-40 items-center justify-center px-4">
+        <div className="bg-gray-800 p-6 md:p-8 rounded-lg shadow-md max-w-3xl w-full h-auto text-left">
           <h2 className="text-2xl font-bold text-white mb-4">
             Hey, Wisdom 👋!
           </h2>
@@ -37,7 +39,7 @@ const KycVerification = () => {
           </p>
           <button
             onClick={handleOpenModal}
-            className="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded text-white font-bold"
+            className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-white font-bold"
           >
             Click here to Submit
           </button>
@@ -46,8 +48,8 @@ const KycVerification = () => {
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-gray-800 p-6 w-[600px] h-[800px] rounded-xl border border-gray-500 shadow-lg text-white relative">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4">
+          <div className="bg-gray-800 p-6 w-full max-w-4xl h-[95vh] rounded-xl border border-gray-500 shadow-lg text-white relative overflow-y-auto">
             {/* Close Button */}
             <button
               onClick={handleCloseModal}
@@ -56,9 +58,9 @@ const KycVerification = () => {
               <FaTimes />
             </button>
 
-            <div className="justify-center flex flex-col h-[80vh]">
+            <div className="flex flex-col space-y-6">
               <h2 className="text-2xl font-bold mb-4">Verification</h2>
-              <p className="text-gray-400 mb-6">
+              <p className="text-gray-400">
                 Your submitted data will be verified by the system's admin. If
                 all of your information is correct, the admin will approve the
                 KYC data and you'll be able to make withdrawal requests.
@@ -133,7 +135,7 @@ const KycVerification = () => {
               <div className="flex justify-end">
                 <button
                   onClick={handleCloseModal}
-                  className="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded text-white font-bold"
+                  className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-white font-bold"
                 >
                   Submit Document
                 </button>

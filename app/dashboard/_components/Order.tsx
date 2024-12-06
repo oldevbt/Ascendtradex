@@ -45,11 +45,25 @@ const MarketTrades = () => {
       trend: "green",
     },
     {
+      time: "10:48:08",
+      price: 39810,
+      amount: 9193.6961,
+      total: 587,
+      trend: "red",
+    },
+    {
       time: "10:47:06",
       price: 40658,
       amount: 4413.4369,
       total: 7693,
       trend: "green",
+    },
+    {
+      time: "10:48:08",
+      price: 39810,
+      amount: 9193.6961,
+      total: 587,
+      trend: "red",
     },
     {
       time: "10:47:06",
@@ -94,11 +108,11 @@ const MarketTrades = () => {
       trend: "green",
     },
     {
-      time: "10:47:06",
-      price: 40658,
-      amount: 4413.4369,
-      total: 7693,
-      trend: "green",
+      time: "10:48:08",
+      price: 39810,
+      amount: 9193.6961,
+      total: 587,
+      trend: "red",
     },
     {
       time: "10:47:06",
@@ -122,59 +136,71 @@ const MarketTrades = () => {
       trend: "green",
     },
     {
+      time: "10:48:08",
+      price: 39810,
+      amount: 9193.6961,
+      total: 587,
+      trend: "red",
+    },
+    {
       time: "10:47:06",
       price: 40658,
       amount: 4413.4369,
       total: 7693,
       trend: "green",
     },
+    // Additional data omitted for brevity
   ];
 
   return (
-    <div className="p-6  text-white min-h-screen">
-      <div className="max-w-full mx-auto bg-gray-800 rounded-lg shadow-lg p-4">
-        <h2 className="text-lg font-semibold text-gray-100 mb-4">
+    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+      <div className="w-full max-w-[95%] md:max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg p-4">
+        <h2 className="text-lg font-semibold text-gray-100 mb-4 text-center">
           Market Trades
         </h2>
-        <table className="w-full table-auto text-left border-collapse">
-          <thead>
-            <tr className="bg-gray-700">
-              <th className="py-2 px-4 text-sm font-medium text-gray-300">
-                TIME
-              </th>
-              <th className="py-2 px-4 text-sm font-medium text-gray-300">
-                PRICE (USDT)
-              </th>
-              <th className="py-2 px-4 text-sm font-medium text-gray-300">
-                AMOUNT (BTC)
-              </th>
-              <th className="py-2 px-4 text-sm font-medium text-gray-300">
-                TOTAL (USDT)
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((trade, index) => (
-              <tr
-                key={index}
-                className={`${
-                  index % 2 === 0 ? "bg-gray-800" : "bg-gray-700"
-                } hover:bg-gray-600`}
-              >
-                <td className="py-2 px-4 text-sm">{trade.time}</td>
-                <td
-                  className={`py-2 px-4 text-sm font-medium ${
-                    trade.trend === "green" ? "text-green-500" : "text-red-500"
-                  }`}
-                >
-                  {trade.price}
-                </td>
-                <td className="py-2 px-4 text-sm">{trade.amount}</td>
-                <td className="py-2 px-4 text-sm">{trade.total}</td>
+        <div className="overflow-x-auto">
+          <table className="w-full table-auto text-left border-collapse">
+            <thead>
+              <tr className="bg-gray-700">
+                <th className="py-2 px-4 text-sm font-medium text-gray-300">
+                  TIME
+                </th>
+                <th className="py-2 px-4 text-sm font-medium text-gray-300">
+                  PRICE (USDT)
+                </th>
+                <th className="py-2 px-4 text-sm font-medium text-gray-300">
+                  AMOUNT (BTC)
+                </th>
+                <th className="py-2 px-4 text-sm font-medium text-gray-300">
+                  TOTAL (USDT)
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {data.map((trade, index) => (
+                <tr
+                  key={index}
+                  className={`${
+                    index % 2 === 0 ? "bg-gray-800" : "bg-gray-700"
+                  } hover:bg-gray-600`}
+                >
+                  <td className="py-2 px-4 text-sm">{trade.time}</td>
+                  <td
+                    className={`py-2 px-4 text-sm font-medium ${
+                      trade.trend === "green"
+                        ? "text-green-500"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {trade.price}
+                  </td>
+                  <td className="py-2 px-4 text-sm">{trade.amount}</td>
+                  <td className="py-2 px-4 text-sm">{trade.total}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

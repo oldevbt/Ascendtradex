@@ -9,19 +9,18 @@ const OnboardingThree: React.FC = () => {
   };
 
   return (
-    <div className="text-white justify-center mt-20">
+    <div className="text-white flex flex-col items-center  mt-10 sm:mt-20">
       {/* Main Question */}
-      <p className="text-xl font-bold mb-2">
+      <p className="text-lg sm:text-xl font-bold mb-4 text-center">
         Have you invested in stock exchanges and cryptocurrency before?
       </p>
-      <p className="text-[14px] px-10 text-gray-400 mb-4 text-left">
+      <p className="text-sm sm:text-[14px] text-gray-400 mb-6 text-center">
         Have you delved into the dynamic arenas of stock exchanges and
-        cryptocurrency, exploring popular stocks and digital assets? Whether
-        you're a seasoned investor or an inquisitive novice.
+        cryptocurrency.
       </p>
 
       {/* Options with Purple Checkmarks */}
-      <div className="flex flex-col space-y-4  px-10 justify-center mt-20 mb-10">
+      <div className="flex flex-col space-y-4 w-full max-w-md justify-center">
         {/* Option 1 */}
         <label className="flex items-center space-x-3">
           <input
@@ -30,7 +29,7 @@ const OnboardingThree: React.FC = () => {
             onChange={() => handleSelect("experience")}
             className="h-5 w-5 border-2 border-gray-400 rounded-sm appearance-none checked:border-purple-500 checked:text-purple-500 checked:bg-transparent checked:hover:bg-transparent"
           />
-          <span className="text-gray-400">
+          <span className="text-sm text-gray-400">
             Yes, I have experience with stock trading
           </span>
         </label>
@@ -43,7 +42,7 @@ const OnboardingThree: React.FC = () => {
             onChange={() => handleSelect("no-experience")}
             className="h-5 w-5 border-2 border-gray-400 rounded-sm appearance-none checked:border-purple-500 checked:text-purple-500 checked:bg-transparent checked:hover:bg-transparent"
           />
-          <span className="text-gray-400">
+          <span className="text-sm text-gray-400">
             No, I don't have experience with stock trading
           </span>
         </label>
@@ -56,7 +55,7 @@ const OnboardingThree: React.FC = () => {
             onChange={() => handleSelect("novice")}
             className="h-5 w-5 border-2 border-gray-400 rounded-sm appearance-none checked:border-purple-500 checked:text-purple-500 checked:bg-transparent checked:hover:bg-transparent"
           />
-          <span className="text-gray-400">
+          <span className="text-sm text-gray-400">
             Complete novice in stock trading
           </span>
         </label>

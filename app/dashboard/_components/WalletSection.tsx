@@ -8,10 +8,10 @@ import Image from "next/image";
 const WalletSection = () => {
   return (
     <div>
-      <div className="flex rounded-lg px-4">
+      <div className="flex rounded-lg px-4 flex-col  lg:flex-row ">
         <div className="border border-[#373A43] rounded-xl px-12 mb-3 mr-2">
           <div className="flex flex-col py-2 items-center gap-x-2">
-            <div className="flex py-2 items-center gap-x-2">
+            <div className="  flex py-2 items-center gap-x-2">
               <Image src={PurpleCircle} alt="" />
               <h1 className="text-[#747584] text-sm">Deposit Wallet</h1>
             </div>
@@ -20,31 +20,7 @@ const WalletSection = () => {
             </div>
           </div>
         </div>
-        <div className="border border-[#373A43] rounded-xl px-10 mb-3">
-          <div className="flex flex-col py-2 items-center gap-x-2">
-            <div className="flex py-2 items-center gap-x-2">
-              <Image src={BlueCircle} alt="" />
-              <h1 className="text-[#747584] text-sm">Interest Balances</h1>
-            </div>
-            <div className="flex justify-end px-5">
-              <h1 className="text-center text-lg">$0.00</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex rounded-lg px-4">
-        <div className="border border-[#373A43] rounded-xl px-12 mb-3 mr-2">
-          <div className="flex flex-col py-2 items-center gap-x-2">
-            <div className="flex py-2 items-center gap-x-2">
-              <Image src={PurpleCircle} alt="" />
-              <h1 className="text-[#747584] text-sm">Deposit Wallet</h1>
-            </div>
-            <div className="flex justify-end px-5">
-              <h1 className="text-center text-lg">$0.00</h1>
-            </div>
-          </div>
-        </div>
-        <div className="border border-[#373A43] rounded-xl px-10 mb-3">
+        <div className="border border-[#373A43] flex-col  lg:flex-row rounded-xl px-10 mb-3">
           <div className="flex flex-col py-2 items-center gap-x-2">
             <div className="flex py-2 items-center gap-x-2">
               <Image src={BlueCircle} alt="" />

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import Profile from "./Profile";
 import Referral from "./Referral";
@@ -14,19 +14,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-[#242731] text-white w-[600px] h-[800px] rounded-xl border border-gray-500 shadow-lg p-5 relative">
+    <div className="fixed inset-0 bg-black  bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-[#242731] text-white w-full h-full md:w-[800px] md:h-[850px] max-w-[100%] max-h-[95%] rounded-xl border border-gray-500 shadow-lg p-5 relative overflow-auto">
+        {/* Close Button */}
         <button
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-200"
           onClick={onClose}
         >
           <CgClose size={20} />
         </button>
-        <h2 className="text-xl font-bold mb-4">Account Settings</h2>
-        <div className="flex justify-center items-center space-x-4 mb-6">
+
+        {/* Modal Header */}
+        <h2 className="text-xl font-bold mb-4 text-center">Account Settings</h2>
+
+        {/* Tab Navigation */}
+        <div className="flex justify-center items-center px-4 space-x-4 mb-6">
           <button
             onClick={() => setActiveTab("profile")}
-            className={`py-2 px-12 rounded-full ${
+            className={`py-2 px-8  text-sm  p-4 rounded-full ${
               activeTab === "profile"
                 ? "text-[#614499] bg-[#191B20]"
                 : "bg-gray-700"
@@ -36,7 +41,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           </button>
           <button
             onClick={() => setActiveTab("referrals")}
-            className={`py-2 px-4 rounded-full ${
+            className={`py-2 px-8  text-sm  rounded-full ${
               activeTab === "referrals"
                 ? "text-[#614499] bg-[#191B20]"
                 : "bg-gray-700"
@@ -46,7 +51,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           </button>
           <button
             onClick={() => setActiveTab("password")}
-            className={`py-2 px-4 rounded-full ${
+            className={`py-2 px-8 text-sm  rounded-full ${
               activeTab === "password"
                 ? "text-[#614499] bg-[#191B20]"
                 : "bg-gray-700"
@@ -55,12 +60,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             Password
           </button>
         </div>
+
+        {/* Tab Content */}
         {activeTab === "profile" && <Profile />}
-
         {activeTab === "referrals" && <Referral />}
-
         {activeTab === "password" && (
-          <div className="space-y-4 mt-6 justify-center flex flex-col h-[50vh]">
+          <div className="space-y-4 mt-6 flex flex-col h-[50vh]">
             <div>
               <label className="block text-gray-300 text-sm mb-2">
                 Current Password
@@ -83,6 +88,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             </div>
           </div>
         )}
+
+        {/* Footer Actions */}
         <div className="flex justify-center mt-10">
           <button
             onClick={onClose}
