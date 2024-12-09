@@ -9,7 +9,7 @@ import Chart from "./_components/Chart";
 import Symbol from "./_components/SymbolOverview";
 import BalanceCard from "./_components/BalanceCard";
 import WalletSection from "./_components/WalletSection";
-import WalletSectionTwo from "./_components/walletTwo";
+
 import LitecoinImage from "@/assets/barcode/Usdt TRC20Exodus.jpg";
 import EthereumImage from "@/assets/barcode/ExodusEth.jpg";
 import UsdtTrc20Image from "@/assets/barcode/LITEExodus.jpg";
