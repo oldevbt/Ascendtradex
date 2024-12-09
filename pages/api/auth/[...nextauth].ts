@@ -59,10 +59,10 @@ export const authOptions: AuthOptions = {
   ],
   session: {
     strategy: "jwt",
-    maxAge: 5 * 60, // Session expires after 30 minutes (in seconds)
+    maxAge: 20 * 60, // Session expires after 30 minutes (in seconds)
   },
   jwt: {
-    maxAge: 5 * 60, // JWT token expires after 30 minutes (in seconds)
+    maxAge: 20 * 60, // JWT token expires after 30 minutes (in seconds)
   },
   callbacks: {
     async jwt({ token, user }) {
@@ -73,7 +73,7 @@ export const authOptions: AuthOptions = {
         token.name = user.name;
 
         // Set token expiration to 30 minutes from the current time (in seconds)
-        token.exp = Math.floor(Date.now() / 1000) + 5 * 60; // 30 minutes
+        token.exp = Math.floor(Date.now() / 1000) + 20 * 60; // 30 minutes
       }
 
       // Calculate the time left based on the token expiration time

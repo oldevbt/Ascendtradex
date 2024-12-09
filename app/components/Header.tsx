@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Container from "./Container";
 import Image from "next/image";
-import Titan from "@/assets/titan.png";
+import Titan from "@/assets/Ascend Logo.png";
 import { CgMenuBoxed } from "react-icons/cg";
 import { IoClose } from "react-icons/io5"; // Close icon
 
@@ -15,10 +15,10 @@ const Header = () => {
     <>
       <Container>
         <div className="flex flex-row justify-between mt-5">
-          <Image src={Titan} alt="Logo" />
+          <Image src={Titan} alt="Logo" className="w-20 h-20" />
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex font-poppins border rounded-full bg-gray">
-            <ul className="flex text-[#98A2B3] font-semibold justify-center py-2 px-3 gap-x-5">
+          <nav className="hidden lg:flex font-poppins bg-gray">
+            <ul className="flex text-[#98A2B3] font-semibold justify-center  items-center py-2 px-3 gap-x-5">
               <li>Home</li>
               <li>About Company</li>
               <li>Features</li>

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { FaBitcoin } from "react-icons/fa";
 

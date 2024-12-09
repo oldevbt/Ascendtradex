@@ -32,7 +32,7 @@ const Onboarding: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#1e1e23]">
+    <div className="flex items-center justify-center min-h-screen   ">
       <div className="w-full h-full sm:w-[600px] sm:h-auto min-h-[500px] sm:min-h-[600px] flex flex-col bg-[#242731] shadow-lg p-6 sm:p-8 rounded-none sm:rounded-3xl relative overflow-y-auto">
         {/* Step Number */}
         <div className="absolute top-4 left-4 text-gray-400 text-sm">

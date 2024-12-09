@@ -4,7 +4,7 @@ const Referral = () => {
       <div className="flex flex-col h-[60vh] justify-center">
         <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-6 rounded-xl mb-4 text-center">
           <h3 className="text-lg font-semibold">
-            Invite your friends to TitanTradex and earn 15% on friends' trading
+            Invite your friends to AscendTradex and earn 15% on friends' trading
             fees
           </h3>
           <div className="bg-white text-black rounded-md p-2 mt-4 flex items-center justify-between">
@@ -23,7 +23,7 @@ const Referral = () => {
           <h1 className="font-bold mb-3">Refer and Enjoy</h1>
           <p className="text-sm font-poppins">
             You'll get commission against your referral's activities. Level has
-            been decided by the TitanTradex authority. If you reach the level,
+            been decided by the AscendTradex authority. If you reach the level,
             you'll get commission.
           </p>
         </div>

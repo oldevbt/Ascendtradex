@@ -1,4 +1,4 @@
-import logo from "@/assets/titan.png";
+import logo from "@/assets/Ascend Logo.png";
 import Image from "next/image";
 import { BsDiscord, BsInstagram, BsTelegram, BsYoutube } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
@@ -14,7 +14,7 @@ const Footer = () => {
             <Image
               src={logo}
               alt="Titan Logo"
-              className="justify-center items-center"
+              className="justify-center items-center w-20 h-20"
             />
             <p className="text-center md:text-left font-poppins font-normal text-[#EAECF0]">
               Titan Trading Platform - The Pioneer Boundless Trading Ecosystem

@@ -2,21 +2,21 @@ import React from "react";
 
 const OnboardingForm: React.FC = () => {
   return (
-    <div className="min-h-screen flex text-white font-poppins ">
+    <div className="h-[100vh]  flex justify-center items-center text-white font-poppins overflow-scroll">
       {/* Main Content */}
-      <div className="flex-1 flex flex-col p-8">
+      <div className="flex-1 flex flex-col pb-0  lg:p-8">
         {/* Form */}
-        <div className="p-8 rounded-lg max-w-2xl mx-auto">
+        <div className=" pb-0 lg:p-8 rounded-lg max-w-2xl mx-auto  shadow-lg">
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-2">
+            <h2 className="text-2xl font-bold mt-10">
               Complete your Account Details
             </h2>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-sm sm:text-base mt-2">
               Kindly set account and provide your information below:
             </p>
           </div>
 
-          <form className="space-y-4">
+          <form className="space-y-5">
             {/* Account Currency */}
             <div>
               <label
@@ -27,7 +27,7 @@ const OnboardingForm: React.FC = () => {
               </label>
               <select
                 id="currency"
-                className="w-full bg-black border border-gray-600 text-gray-400 px-4 py-2 rounded-lg focus:outline-none"
+                className="w-full bg-gray-700 border border-gray-600 text-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
               >
                 <option value="usd">USD - United States Dollar</option>
                 <option value="eur">EUR - Euro</option>
@@ -47,7 +47,7 @@ const OnboardingForm: React.FC = () => {
                 id="firstName"
                 type="text"
                 placeholder="Your first name"
-                className="w-full bg-black border border-gray-600 text-gray-400 px-4 py-2 rounded-lg focus:outline-none"
+                className="w-full bg-gray-700 border border-gray-600 text-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
             </div>
 
@@ -63,7 +63,7 @@ const OnboardingForm: React.FC = () => {
                 id="lastName"
                 type="text"
                 placeholder="Your last name"
-                className="w-full bg-black border border-gray-600 text-gray-400 px-4 py-2 rounded-lg focus:outline-none"
+                className="w-full bg-gray-700 border border-gray-600 text-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
             </div>
 
@@ -79,7 +79,7 @@ const OnboardingForm: React.FC = () => {
                 id="address"
                 type="text"
                 placeholder="Your address"
-                className="w-full bg-black border border-gray-600 text-gray-400 px-4 py-2 rounded-lg focus:outline-none"
+                className="w-full bg-gray-700 border border-gray-600 text-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
             </div>
 
@@ -95,7 +95,7 @@ const OnboardingForm: React.FC = () => {
                 id="state"
                 type="text"
                 placeholder="Your state"
-                className="w-full bg-black border border-gray-600 text-gray-400 px-4 py-2 rounded-lg focus:outline-none"
+                className="w-full bg-gray-700 border border-gray-600 text-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
             </div>
 
@@ -108,7 +108,7 @@ const OnboardingForm: React.FC = () => {
                 id="city"
                 type="text"
                 placeholder="Your city"
-                className="w-full bg-black border border-gray-600 text-gray-400 px-4 py-2 rounded-lg focus:outline-none"
+                className="w-full bg-gray-700 border border-gray-600 text-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
             </div>
 
@@ -123,8 +123,8 @@ const OnboardingForm: React.FC = () => {
               <input
                 id="zipCode"
                 type="text"
-                placeholder="Your zipcode"
-                className="w-full bg-black border border-gray-600 text-gray-400 px-4 py-2 rounded-lg focus:outline-none"
+                placeholder="Your zip code"
+                className="w-full bg-gray-700 border border-gray-600 text-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
             </div>
           </form>

@@ -7,6 +7,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RingLoader } from "react-spinners"; // Import the spinner
 
+import { useRouter } from "next/navigation";
+
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -19,6 +21,7 @@ const SignUpPage = () => {
   });
 
   const [loading, setLoading] = useState(false); // Add loading state
+  const router = useRouter();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -85,6 +88,7 @@ const SignUpPage = () => {
 
       const data = await response.json();
       toast.success("Please check your email for verification.");
+      router.push("/Verify");
       setFormData({
         email: "",
         firstName: "",
@@ -105,7 +109,7 @@ const SignUpPage = () => {
   return (
     <div className="flex max-h-screen overflow-y-hidden">
       {/* Left Section */}
-      <div className="relative flex-1">
+      <div className="relative flex-1 hidden lg:flex">
         <Image
           src={PhoneTrade}
           alt="Background"
@@ -120,7 +124,7 @@ const SignUpPage = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex w-full lg:w-1/2 items-center justify-center bg-gray-900">
+      <div className="flex w-full lg:w-1/2  h-screen lg:h-auto items-center justify-center bg-gray-900">
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
           <div className="text-center mb-6 mt-6">
             <h1 className="text-3xl font-bold text-gray-800">Sign Up</h1>

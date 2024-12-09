@@ -4,11 +4,34 @@ import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+// Function to generate a unique email verification token
+async function generateUniqueToken(): Promise<string> {
+  let isUnique = false;
+  let token: string = ""; // Initialize token before the loop
+
+  while (!isUnique) {
+    token = crypto.randomBytes(32).toString("hex"); // Assign token inside the loop
+
+    // Check if the token already exists in the database
+    const existingToken = await prisma.user.findUnique({
+      where: { emailVerificationToken: token },
+    });
+
+    if (!existingToken) {
+      // If token doesn't exist, it's unique, so set flag to true
+      isUnique = true;
+    }
+  }
+
+  return token; // Return the unique token
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { email, firstName, lastName, country, number, password } = body;
 
+    // Validate required fields
     if (!email || !password) {
       return NextResponse.json(
         { error: "Email and password are required." },
@@ -16,6 +39,7 @@ export async function POST(request: Request) {
       );
     }
 
+    // Check if the user already exists
     const existingUser = await prisma.user.findUnique({
       where: { email },
     });
@@ -27,9 +51,13 @@ export async function POST(request: Request) {
       );
     }
 
+    // Hash the user's password
     const hashedPassword = await bcrypt.hash(password, 12);
-    const emailVerificationToken = crypto.randomBytes(32).toString("hex");
 
+    // Generate a unique token
+    const emailVerificationToken = await generateUniqueToken();
+
+    // Create the new user in the database
     const user = await prisma.user.create({
       data: {
         email,
@@ -39,10 +67,12 @@ export async function POST(request: Request) {
         number,
         hashedPassword,
         emailVerificationToken,
-        isEmailVerified: false,
+        isEmailVerified: false, // Mark email as not verified
       },
     });
 
+    // Send email verification
+    const verificationUrl = `${process.env.BASE_URL}/api/verify?token=${emailVerificationToken}`;
     const transporter = nodemailer.createTransport({
       service: "Gmail",
       auth: {
@@ -51,7 +81,6 @@ export async function POST(request: Request) {
       },
     });
 
-    const verificationUrl = `${process.env.BASE_URL}/api/verify?token=${emailVerificationToken}`;
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
@@ -64,6 +93,7 @@ export async function POST(request: Request) {
       `,
     };
 
+    // Send the email
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json(

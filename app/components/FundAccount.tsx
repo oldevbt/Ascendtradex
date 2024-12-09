@@ -13,7 +13,7 @@ const FundYourAccount = () => {
             <span className="text-purple-500">Fund</span> Your Account
           </h2>
           <p className="text-gray-300 mt-4">
-            TitanTradex offers a wide range of instant, simple, and secure
+            AscendTradex offers a wide range of instant, simple, and secure
             funding methods to suit your needs.
           </p>
           <button className="mt-8 px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg shadow-lg text-white text-lg font-semibold flex items-center justify-center gap-2">

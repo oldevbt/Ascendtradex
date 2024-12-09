@@ -29,9 +29,7 @@ const OnboardingThree: React.FC = () => {
             onChange={() => handleSelect("experience")}
             className="h-5 w-5 border-2 border-gray-400 rounded-sm appearance-none checked:border-purple-500 checked:text-purple-500 checked:bg-transparent checked:hover:bg-transparent"
           />
-          <span className="text-sm text-gray-400">
-            Yes, I have experience with stock trading
-          </span>
+          <span className="text-sm text-gray-400">Yes, I have experience</span>
         </label>
 
         {/* Option 2 */}
@@ -43,7 +41,7 @@ const OnboardingThree: React.FC = () => {
             className="h-5 w-5 border-2 border-gray-400 rounded-sm appearance-none checked:border-purple-500 checked:text-purple-500 checked:bg-transparent checked:hover:bg-transparent"
           />
           <span className="text-sm text-gray-400">
-            No, I don't have experience with stock trading
+            No, I don't have experience
           </span>
         </label>
 

@@ -6,7 +6,7 @@ const VerifyPassword = () => {
   return (
     <div className="flex h-screen overflow-y-hidden">
       {/* Left Section */}
-      <div className="relative flex-1 bg-gray-900">
+      <div className="relative flex-1 bg-gray-900 hidden lg:flex">
         {/* Image */}
         <Image
           src={Reset}
@@ -24,13 +24,13 @@ const VerifyPassword = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex w-full lg:w-1/2 items-center justify-center bg-gray-900">
+      <div className="flex w-full lg:w-1/2  h-screen lg:h-auto  items-center justify-center bg-gray-900">
         <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
           {/* Logo and Header */}
           <div className="text-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-800">Reset Password</h1>
+            <h1 className="text-2xl font-bold text-gray-800">Verify Email</h1>
             <p className="text-gray-600">
-              To recover your account please provide your email address.
+              If you did not get an email please provide your email address.
             </p>
           </div>
 
@@ -70,30 +70,6 @@ const VerifyPassword = () => {
       </div>
 
       {/* Floating Notification (Optional) */}
-      <div className="fixed bottom-4 left-4 bg-purple-600 text-white rounded-lg p-4 shadow-lg flex items-center space-x-3">
-        <div className="w-10 h-10 bg-white text-purple-600 rounded-full flex items-center justify-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 17h5l-1.405-1.405C19.865 15.27 20 14.62 20 14c0-2.21-1.79-4-4-4s-4 1.79-4 4c0 .62.135 1.27.405 1.595L9 21H4v-2l9-9c.62-.62 1.27-.905 1.595-.905C15.275 9 15 8.275 15 8c0-2.21-1.79-4-4-4s-4 1.79-4 4c0 .62.135 1.27.405 1.595L9 21H4v-2l9-9c.62-.62 1.27-.905 1.595-.905"
-            />
-          </svg>
-        </div>
-        <div>
-          <p className="text-sm font-medium">New Registration</p>
-          <p className="text-xs">
-            Daryl from Garland registered on the site via Email
-          </p>
-        </div>
-      </div>
     </div>
   );
 };

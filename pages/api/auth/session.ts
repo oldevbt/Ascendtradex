@@ -23,7 +23,7 @@ export default async function handler(
   // Check if the session is expired
   if (session.expires && new Date(session.expires) < new Date()) {
     console.log("[API Response] Session expired. Signing user out.");
-    await signOut({ callbackUrl: "/login" }); // Redirect user to the home page
+    await signOut({ callbackUrl: "/Login" }); // Redirect user to the home page
     return res
       .status(401)
       .json({ message: "Session expired. Please log in again." });

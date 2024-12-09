@@ -17,7 +17,7 @@ const TradeScanners = () => {
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h2 className="text-3xl font-bold mb-4">Trade Scanners</h2>
           <p className="text-gray-400 mb-6 max-w-[500px] mx-auto lg:mx-0">
-            TitanTradex offers its members cutting-edge scanning software, the
+            AscendTradex offers its members cutting-edge scanning software, the
             most advanced in its class.
           </p>
           <p className="text-gray-400 mb-6 max-w-[500px] mx-auto lg:mx-0">

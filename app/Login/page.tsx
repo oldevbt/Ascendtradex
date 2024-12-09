@@ -31,7 +31,7 @@ const LoginPage = () => {
     } else {
       toast.success("Login successful!");
       setTimeout(() => {
-        window.location.href = "/onboarding"; // Adjust to your desired path
+        window.location.href = "/dashboard"; // Adjust to your desired path
       }, 2000); // Delay to allow the user to see the success message
     }
   };
@@ -40,7 +40,7 @@ const LoginPage = () => {
     <div className="flex h-screen">
       <ToastContainer position="top-right" autoClose={3000} />
       {/* Left Section */}
-      <div className="relative flex-1">
+      <div className="relative flex-1 hidden lg:flex">
         <Image src={PhoneTrade} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center">
           <p className="text-white text-3xl font-bold mb-20 text-center px-4">
@@ -50,7 +50,7 @@ const LoginPage = () => {
         </div>
       </div>
       {/* Right Section */}
-      <div className="flex w-full lg:w-1/2 items-center justify-center bg-gray-900">
+      <div className="flex w-full lg:w-1/2   h-screen lg:h-auto  items-center justify-center bg-gray-900">
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
           <h2 className="text-2xl font-bold text-gray-800 text-center">
             Sign In Trading Account
@@ -113,7 +113,7 @@ const LoginPage = () => {
           <p className="text-center text-sm text-gray-600 mt-4">
             Do not have an account?{" "}
             <Link href="/SignUp" className="text-purple-600 hover:underline">
-              Sign In
+              Sign Up
             </Link>
           </p>
         </div>

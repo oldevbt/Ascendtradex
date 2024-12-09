@@ -9,9 +9,9 @@ const BrokerStatement = () => {
         <div>
           <h2 className="text-3xl font-bold mb-4">Broker Statement Report</h2>
           <p className="text-gray-400 mb-6 max-w-[500px]">
-            Over the past two years, Titantradex has experienced remarkable
+            Over the past two years, Ascendtradex has experienced remarkable
             success, as evidenced by our outstanding broker statement report.
-            Notably, Titantradex portfolio has seen impressive growth, with
+            Notably, Ascendtradex portfolio has seen impressive growth, with
             significant returns on both equities and bonds, surpassing industry
             benchmarks. The detailed breakdown reveals a well-diversified
             investment approach, with profitable transactions consistently

@@ -11,7 +11,7 @@ const FirstSection = () => {
       {/* Hero Section */}
       <section className="text-center py-8 sm:py-16 mt-6 sm:mt-10 px-4 sm:px-6">
         <h2 className="text-purple-400 font-syne text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">
-          Discover the advantages of choosing TitanTradex
+          Discover the advantages of choosing AscendTradex
         </h2>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-poppins mb-4 sm:mb-6">
           The world's leading online financial derivatives broker

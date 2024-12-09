@@ -8,27 +8,47 @@ import Image from "next/image";
 const WalletSection = () => {
   return (
     <div>
-      <div className="flex rounded-lg px-4 flex-col  lg:flex-row ">
-        <div className="border border-[#373A43] rounded-xl px-12 mb-3 mr-2">
-          <div className="flex flex-col py-2 items-center gap-x-2">
-            <div className="  flex py-2 items-center gap-x-2">
+      <div className="grid grid-cols-2 gap-4 rounded-lg px-4">
+        {/* Deposit Wallet */}
+        <div className="border border-[#373A43] rounded-xl p-6">
+          <div className="flex flex-col items-center gap-y-2">
+            <div className="flex items-center gap-x-2">
               <Image src={PurpleCircle} alt="" />
               <h1 className="text-[#747584] text-sm">Deposit Wallet</h1>
             </div>
-            <div className="flex justify-end px-5">
-              <h1 className="text-center text-lg">$0.00</h1>
-            </div>
+            <div className="text-center text-lg">$0.00</div>
           </div>
         </div>
-        <div className="border border-[#373A43] flex-col  lg:flex-row rounded-xl px-10 mb-3">
-          <div className="flex flex-col py-2 items-center gap-x-2">
-            <div className="flex py-2 items-center gap-x-2">
+
+        {/* Interest Balances */}
+        <div className="border border-[#373A43] rounded-xl p-6">
+          <div className="flex flex-col items-center gap-y-2">
+            <div className="flex items-center gap-x-2">
               <Image src={BlueCircle} alt="" />
               <h1 className="text-[#747584] text-sm">Interest Balances</h1>
             </div>
-            <div className="flex justify-end px-5">
-              <h1 className="text-center text-lg">$0.00</h1>
+            <div className="text-center text-lg">$0.00</div>
+          </div>
+        </div>
+
+        {/* Add more grid items here */}
+        <div className="border border-[#373A43] rounded-xl p-6">
+          <div className="flex flex-col items-center gap-y-2">
+            <div className="flex items-center gap-x-2">
+              <Image src={PurpleCircle} alt="" />
+              <h1 className="text-[#747584] text-sm">Equity</h1>
             </div>
+            <div className="text-center text-lg">$0.00</div>
+          </div>
+        </div>
+
+        <div className="border border-[#373A43] rounded-xl p-6">
+          <div className="flex flex-col items-center gap-y-2">
+            <div className="flex items-center gap-x-2">
+              <Image src={PurpleCircle} alt="" />
+              <h1 className="text-[#747584] text-sm">Total Withdrawal</h1>
+            </div>
+            <div className="text-center text-lg">$0.00</div>
           </div>
         </div>
       </div>

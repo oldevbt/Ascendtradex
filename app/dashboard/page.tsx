@@ -9,6 +9,7 @@ import Chart from "./_components/Chart";
 import Symbol from "./_components/SymbolOverview";
 import BalanceCard from "./_components/BalanceCard";
 import WalletSection from "./_components/WalletSection";
+import WalletSectionTwo from "./_components/walletTwo";
 import LitecoinImage from "@/assets/barcode/Usdt TRC20Exodus.jpg";
 import EthereumImage from "@/assets/barcode/ExodusEth.jpg";
 import UsdtTrc20Image from "@/assets/barcode/LITEExodus.jpg";
@@ -63,8 +64,8 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="px-4 lg:px-10">
-      <div className="rounded-lg border border-dashed bg-[#705D3E] mb-4 p-4  flex flex-wrap justify-between items-center">
+    <div className="">
+      <div className="rounded-lg border  w-[300px] border-dashed bg-[#705D3E] pt-4 my-4 p-4  flex flex-wrap justify-between items-center">
         <h1 className="text-white">
           Empty Balance! Your balance is empty. Please make a deposit for your
           next trade. Click on the deposit button.
@@ -76,18 +77,28 @@ const Dashboard = () => {
 
       {/* Balance Section */}
       <div className="bg-[#1F2129] p-6 rounded-lg flex flex-col gap-4">
-        <div className="flex flex-col lg:flex-row justify-between gap-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+          {/* Balance Card */}
           <BalanceCard />
-          <div className="flex flex-wrap gap-2">
-            <button className="bg-[#8256D0] rounded-lg py-2 px-4 text-white flex items-center gap-x-2 font-bold">
-              <BsBoxArrowInUpRight />
+
+          {/* Button Group */}
+          <div className="flex flex-row gap-2">
+            {/* Withdraw Button */}
+            <button className="bg-[#8256D0] rounded-lg py-3 px-6 text-white flex items-center gap-x-2 font-bold transition duration-200 hover:bg-[#6a45a5]">
+              <div className="text-lg">
+                <BsBoxArrowInUpRight />
+              </div>
               Withdraw
             </button>
+
+            {/* Deposit Button */}
             <button
-              className="border-[#8256D0] bg-transparent border-2 rounded-lg py-2 px-4 text-white flex items-center gap-x-2 font-bold"
+              className="border-2 border-[#8256D0] bg-transparent rounded-lg py-3 px-6 text-white flex items-center gap-x-2 font-bold transition duration-200 hover:bg-[#8256D0] hover:text-white"
               onClick={toggleModal}
             >
-              <BsBoxArrowRight />
+              <div className="text-lg">
+                <BsBoxArrowRight />
+              </div>
               Deposit
             </button>
           </div>
