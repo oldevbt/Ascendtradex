@@ -15,7 +15,7 @@ const Header = () => {
     <>
       <Container>
         <div className="flex flex-row justify-between mt-5">
-          <Image src={Titan} alt="Logo" className="w-20 h-20" />
+          <Image src={Titan} alt="Logo" className="w-10 h-10" />
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex font-poppins bg-gray">
             <ul className="flex text-[#98A2B3] font-semibold justify-center  items-center py-2 px-3 gap-x-5">

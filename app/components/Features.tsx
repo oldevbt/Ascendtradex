@@ -23,7 +23,9 @@ const Why = () => {
             data-aos-offset="400"
           >
             {/* text */}
-            <h2 className="section-title">Why you should choose CRAPPO</h2>
+            <h2 className="section-title">
+              Why you should choose AscendTradex
+            </h2>
             <p className="section-subtitle  text-lg">
               Experience the next generation cryptocurrency platform. No
               financial borders, extra fees, and fake reviews.

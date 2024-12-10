@@ -4,6 +4,7 @@ import img2 from "@/assets/first/customer-service.png";
 import img3 from "@/assets/first/heavily-regulated.png";
 import img4 from "@/assets/first/img-leverage-up.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const FirstSection = () => {
   return (
@@ -90,9 +91,13 @@ const FirstSection = () => {
           <p className="text-gray-400 text-sm mt-1 underline">
             *Terms & Conditions Apply
           </p>
-          <button className=" border border-purple-300 text-white py-3 px-6 rounded-lg mt-6 font-semibold shadow-lg transition duration-200">
+
+          <Link
+            href="/SignUp"
+            className=" border border-purple-300 text-white py-3 px-6 rounded-lg mt-6 font-semibold shadow-lg transition duration-200"
+          >
             Start Trading
-          </button>
+          </Link>
         </div>
       </section>
     </div>

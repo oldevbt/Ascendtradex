@@ -13,63 +13,63 @@ const GlobalMarkets = () => {
             height: "400px",
           }}
         >
-          <h2 className="text-3xl font-bold mb-6 text-black">
+          <h2 className="text-3xl font-bold mb-6 text-white">
             Global Markets at Your Fingertips
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-lg">
             {/* Items */}
             <div className="flex items-center space-x-4">
-              <span className="text-black text-xl">
+              <span className="text-white text-xl">
                 <BiCheckCircle />
               </span>
               <div>
-                <p className="font-semibold text-black">Forex CFDs</p>
-                <p className="text-black text-sm">61 products</p>
+                <p className="font-semibold text-white">Forex CFDs</p>
+                <p className="text-white text-sm">61 products</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-black text-xl">
+              <span className="text-white text-xl">
                 <BiCheckCircle />
               </span>
               <div>
-                <p className="font-semibold text-black">Index CFDs</p>
-                <p className="text-black text-sm">25 products</p>
+                <p className="font-semibold text-white">Index CFDs</p>
+                <p className="text-white text-sm">25 products</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-black text-xl">
+              <span className="text-white text-xl">
                 <BiCheckCircle />
               </span>
               <div>
-                <p className="font-semibold text-black">Commodities CFDs</p>
-                <p className="text-black  text-sm">24 products</p>
+                <p className="font-semibold text-white">Commodities CFDs</p>
+                <p className="text-white text-sm">24 products</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-black text-xl">
+              <span className="text-white text-xl">
                 <BiCheckCircle />
               </span>
               <div>
-                <p className="font-semibold text-black">Stocks CFDs</p>
-                <p className="text-black text-sm">2100+ products</p>
+                <p className="font-semibold text-white">Stocks CFDs</p>
+                <p className="text-white text-sm">2100+ products</p>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-black text-xl">
+            <div className=" hidden lg:flex items-center space-x-4">
+              <span className="text-white text-xl">
                 <BiCheckCircle />
               </span>
               <div>
-                <p className="font-semibold text-black">Bond CFDs</p>
-                <p className="text-black text-sm">9 products</p>
+                <p className="font-semibold text-white">Bond CFDs</p>
+                <p className="text-white text-sm">9 products</p>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-black text-xl">
+            <div className="hidden lg:flex items-center space-x-4">
+              <span className="text-white text-xl">
                 <BiCheckCircle />
               </span>
               <div>
-                <p className="font-semibold text-black">Cryptocurrency CFDs</p>
-                <p className="text-black text-sm">21 products</p>
+                <p className="font-semibold text-white">Cryptocurrency CFDs</p>
+                <p className="text-white text-sm">21 products</p>
               </div>
             </div>
           </div>
