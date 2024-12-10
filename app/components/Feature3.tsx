@@ -2,6 +2,7 @@ import React from "react";
 
 import Imag from "@/assets/cyrptoCurrencyHeader.png";
 import Imag2 from "@/assets/orexHeader.png";
+import Imag3 from "@/assets/sharesHeader.png";
 
 import Image from "next/image";
 
@@ -23,15 +24,15 @@ const InvestmentComponent = () => {
               world in market capitalization with margins as low as 5%.
             </p>
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-black bg-opacity-50 text-center p-4 rounded-lg">
+              <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400 p-4 rounded-lg">
                 <p className="text-xl font-bold text-purple-500">20,000+</p>
                 <p className="text-gray-400 text-sm">Shares</p>
               </div>
-              <div className="bg-black bg-opacity-50 text-center p-4 rounded-lg">
+              <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400  p-4 rounded-lg">
                 <p className="text-xl font-bold text-purple-500">20:1</p>
                 <p className="text-gray-400 text-sm">Level of Leverage</p>
               </div>
-              <div className="bg-black bg-opacity-50 text-center p-4 rounded-lg">
+              <div className="bg-black bg-opacity-50 text-center border-2  border-gray-400  p-4 rounded-lg">
                 <p className="text-xl font-bold text-purple-500">0%</p>
                 <p className="text-gray-400 text-sm">Commission</p>
               </div>
@@ -39,7 +40,7 @@ const InvestmentComponent = () => {
           </div>
           {/* Right Image */}
           <div className="flex justify-center">
-            <Image src={Imag2} alt="Apple" className=" rounded-lg shadow-lg" />
+            <Image src={Imag3} alt="Apple" className=" rounded-lg shadow-lg" />
           </div>
         </div>
 
@@ -59,13 +60,13 @@ const InvestmentComponent = () => {
               from the tightest spreads in the industry.
             </p>
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-black bg-opacity-50 text-center p-4 rounded-lg">
+              <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400 p-4 rounded-lg">
                 <p className="text-xl font-bold text-purple-500">Up to 500:1</p>
                 <p className="text-gray-400 text-sm">
                   Highest levels of leverage
                 </p>
               </div>
-              <div className="bg-black bg-opacity-50 text-center p-4 rounded-lg">
+              <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400 p-4 rounded-lg">
                 <p className="text-xl font-bold text-purple-500">0.0*</p>
                 <p className="text-gray-400 text-sm">
                   Tightest spreads in the industry
@@ -87,15 +88,15 @@ const InvestmentComponent = () => {
               world in market capitalization with margins as low as 5%.
             </p>
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-black bg-opacity-50 text-center p-4 rounded-lg">
+              <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400  p-4 rounded-lg">
                 <p className="text-xl font-bold text-purple-500">20,000+</p>
                 <p className="text-gray-400 text-sm">Shares</p>
               </div>
-              <div className="bg-black bg-opacity-50 text-center p-4 rounded-lg">
+              <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400  p-4 rounded-lg">
                 <p className="text-xl font-bold text-purple-500">20:1</p>
                 <p className="text-gray-400 text-sm">Level of Leverage</p>
               </div>
-              <div className="bg-black bg-opacity-50 text-center p-4 rounded-lg">
+              <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400  p-4 rounded-lg">
                 <p className="text-xl font-bold text-purple-500">0%</p>
                 <p className="text-gray-400 text-sm">Commission</p>
               </div>

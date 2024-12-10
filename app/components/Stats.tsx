@@ -1,57 +1,54 @@
 import React from "react";
+import icon1 from "@/assets/icon-1.svg";
+import icon2 from "@/assets/icon-2.svg";
+import icon3 from "@/assets/icon-3.svg";
+import Image from "next/image";
 
-import { HiChartBar, HiUser, HiGlobe } from "react-icons/hi";
+const Features = () => {
+  const features = [
+    {
+      imgSrc: icon1, // Replace with your image path
+      title: "Copy",
+      description: "traders who trade Real Stocks, Forex, CFDs & more",
+      color: "text-[#FF497C]",
+    },
+    {
+      imgSrc: icon2, // Replace with your image path
+      title: "Competitive",
+      description: "trading fees. Completely free account",
+      color: "text-[#946CFF]",
+    },
+    {
+      imgSrc: icon3, // Replace with your image path
+      title: "Trust",
+      description: "a regulated company",
+      color: "text-[#47E3CA]",
+    },
+  ];
 
-const Stats = () => {
   return (
-    <section
-      className="mb-10 font-poppins"
-      data-aos="fade-down"
-      data-aos-delay="1200"
-    >
-      <div className="container mx-auto">
-        <div className="flex flex-col gap-y-6  lg:flex-row lg:justify-between">
-          {/* item text */}
-          <div className="flex items-center gap-x-6">
-            <div className="bg-white/10 w-20 h-20 rounded-full flex items-center justify-center text-blue  text-2xl">
-              <HiChartBar />
+    <div className="bg-[#0A0E25] text-white py-8">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 lg:px-12 space-y-8 lg:space-y-0">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-center space-x-4">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1A1D36]">
+              <Image
+                src={feature.imgSrc}
+                alt={feature.title}
+                className="w-6 h-6 object-contain"
+              />
             </div>
             <div>
-              <div className="text-2xl font-bold lg:text-[40px] lg:mb-2">
-                10M+
-              </div>
-              <div>Trusted Wallets Investor</div>
+              <h4 className={`text-lg font-semibold ${feature.color}`}>
+                {feature.title}
+              </h4>
+              <p className="text-sm text-gray-300">{feature.description}</p>
             </div>
           </div>
-
-          <div className="flex items-center gap-x-6">
-            <div className="bg-white/10 w-20 h-20 rounded-full flex items-center justify-center text-blue  text-2xl">
-              <HiUser />
-            </div>
-            {/* item text */}
-            <div>
-              <div className="text-2xl font-bold lg:text-[40px] lg:mb-2">
-                195
-              </div>
-              <div>Countries Supported</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-x-6">
-            <div className="bg-white/10 w-20 h-20 rounded-full flex items-center justify-center text-blue  text-2xl">
-              <HiGlobe />
-            </div>
-            {/* item text */}
-            <div>
-              <div className="text-2xl font-bold lg:text-[40px] lg:mb-2">
-                $30B
-              </div>
-              <div>Digital Currency Exchanged</div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Stats;
+export default Features;

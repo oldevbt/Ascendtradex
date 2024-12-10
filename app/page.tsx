@@ -20,6 +20,7 @@ import BrokerStatement from "./components/BrokerStatement";
 import PaymentOptions from "./components/PaymentOptions";
 import VoiceflowWidget from "./components/VoiceflowWidget";
 import FundYourAccount from "./components/FundAccount";
+import Sectrions from "./components/Sectrions";
 
 export default function Home() {
   const [notification, setNotification] = useState<{
@@ -108,14 +109,16 @@ export default function Home() {
         <Header />
         <Hero />
       </div>
-      <div className="mt-[450px]">
+      <div className="mt-[150px] lg:mt-[300px]">
         <FirstSection />
-        <RealTimeMarketAnalytics />
+        <Sectrions />
+
         <Stats />
-        <Features />
-        <FeatureTwo />
+
         <Feature3 />
+        <RealTimeMarketAnalytics />
         <StepsSection />
+
         <BrokerStatement />
         <TradeScanners />
         <FundYourAccount />

@@ -30,14 +30,14 @@ const Header = () => {
           {/* Desktop Login/Sign Up */}
           <div className="hidden md:flex gap-x-2 items-center">
             <Link href="/Login" className="font-semibold">
-              Login
+              Client Login
             </Link>
 
             <Link
               href="/SignUp"
               className="bg-white font-semibold rounded-md text-black py-2 px-4"
             >
-              Sign up
+              Open Account
             </Link>
           </div>
           {/* Mobile Menu Icon */}

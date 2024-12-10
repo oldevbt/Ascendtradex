@@ -3,14 +3,14 @@ import { BiCheckCircle } from "react-icons/bi";
 
 const GlobalMarkets = () => {
   return (
-    <section className=" py-12 px-6 lg:px-16 text-white  ">
+    <section className=" py-12 px-6  h-[400px] lg:px-16 text-white  ">
       <div className="max-w-5xl mx-auto">
         <div
           className="rounded-lg p-8 shadow-lg"
           style={{
             backgroundImage:
               "linear-gradient(to bottom, #c4a8f4, #9a77e6, #753bd3, #562bb4, #3a1f95)",
-            height: "400px",
+            height: "500px",
           }}
         >
           <h2 className="text-3xl font-bold mb-6 text-white">

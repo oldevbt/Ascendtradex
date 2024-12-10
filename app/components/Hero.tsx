@@ -9,7 +9,7 @@ import hero from "@/assets/ascend.webp";
 const Hero = () => {
   return (
     <Container>
-      <div className="flex flex-col items-center justify-center mt-20 sm:mt-40 space-y-8">
+      <div className="flex flex-col h-[60vh] lg:h-auto items-center justify-center mt-20 sm:mt-40 space-y-8">
         {/* div1 */}
         <div className="text-center space-y-6 px-4 sm:px-8">
           <h1 className="font-poppins text-[#DCF536] font-medium text-[14px] sm:text-[16px] py-1 px-2 flex items-center justify-center border rounded-full border-[#DCF536] w-fit mx-auto">
@@ -49,11 +49,11 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="mt-10 sm:mt-20 px-4 sm:px-8">
+      <div className="mt-[80px] lg:mt-10 px-4 sm:px-8">
         <Image
           src={hero}
           alt="Hero Image"
-          className="w-full max-w-[500px] sm:max-w-none mx-auto"
+          className="lg:w-full lg:h-full  h-[180px]  w-[480px] mx-auto"
         />
       </div>
     </Container>
