@@ -21,10 +21,8 @@ const PaymentOptions = () => {
   return (
     <section className="bg-[#0b0d2c] py-16 text-white">
       <div className="max-w-7xl mx-auto px-6  text-white text-center">
-        <h2 className="text-3xl font-bold mb-2 font-poppins">
-          Payment Options
-        </h2>
-        <h2 className="text-lg  mb-6 font-poppins">
+        <h2 className="text-3xl font-bold mb-2 ">Payment Options</h2>
+        <h2 className="text-lg  mb-6 ">
           Select from a variety of payment options to complete your payment and
           choose the method that best suits your needs
         </h2>

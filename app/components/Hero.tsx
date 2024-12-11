@@ -1,62 +1,69 @@
-import { Calistoga } from "next/font/google";
-import Container from "./Container";
 import { SlGraph } from "react-icons/sl";
 import { GrSecure } from "react-icons/gr";
 import { FaGlobeEurope } from "react-icons/fa";
 import Image from "next/image";
-import hero from "@/assets/ascend.webp";
+import hero from "@/assets/header-main.png";
+import Container from "./Container";
+import background from "@/assets/bgg.svg";
 
 const Hero = () => {
   return (
-    <Container>
-      <div className="flex flex-col h-[60vh] lg:h-auto items-center justify-center mt-20 sm:mt-40 space-y-8">
-        {/* div1 */}
-        <div className="text-center space-y-6 px-4 sm:px-8">
-          <h1 className="font-poppins text-[#DCF536] font-medium text-[14px] sm:text-[16px] py-1 px-2 flex items-center justify-center border rounded-full border-[#DCF536] w-fit mx-auto">
-            AscendTradex
-          </h1>
+    <div className="relative">
+      {/* Background Image */}
+      <div
+        className="absolute bottom-36 right-80  w-[500px] h-full bg-no-repeat"
+        style={{
+          backgroundImage: `url(${background.src})`,
+          backgroundPosition: "top right", // Ensure it's in the top-right corner
+          backgroundSize: "contain", // Adjust the size of the background image
+        }}
+      ></div>
 
-          <h2 className="font-syne text-[24px] sm:text-[32px] lg:text-[80px] leading-[1.2] font-semibold">
-            The Pioneer Boundless Trading Ecosystem
-          </h2>
-
-          <div className="flex flex-col sm:flex-row font-poppins font-medium justify-center text-center gap-y-4 sm:gap-y-0 sm:gap-x-8">
-            <h1 className="flex gap-x-2 items-center justify-center">
-              <div className="text-[16px] sm:text-[20px] lg:text-2xl font-bold rounded-full bg-white p-2 text-black">
-                <SlGraph />
-              </div>
-              Fast Trading
+      <Container>
+        <div className="flex flex-col mt-20 pt-16 lg:h-auto items-center justify-center space-y-8 relative">
+          {/* Text Content */}
+          <div className="text-center lg:space-y-6 space-y-3 px-4 sm:px-8">
+            <h1 className="text-[#FFFF] bg-[#2F3A4A] font-medium lg:text-[14px] text-[8px] py-2 px-6 flex items-center justify-center border rounded-full border-[#5E6871]  mx-10  w-[400px] lg:w-fit lg:mx-auto">
+              Unlock Your Trading Potential with our expert insights, real-time
+              market data, and powerful tools.
             </h1>
 
-            <h1 className="flex gap-x-2 items-center justify-center">
-              <div className="text-[16px] sm:text-[20px] lg:text-2xl rounded-full bg-white p-2 font-bold text-black">
-                <GrSecure />
-              </div>
-              Secure and reliable
-            </h1>
+            <h2 className="text-[24px] sm:text-[32px] lg:text-[42.5px] text-[#ffff] lg:leading-[58.5px] font-bold max-w-[800px] mx-auto">
+              Trade seamlessly with cutting-edge analytics
+            </h2>
 
-            <h1 className="flex gap-x-2 items-center justify-center">
-              <div className="text-[16px] sm:text-[20px] lg:text-2xl rounded-full bg-white p-2 font-bold text-black">
-                <FaGlobeEurope />
-              </div>
-              Continuous market update
-            </h1>
+            <div className="flex flex-col max-w-[800px]  text-[#B0B3BC] text-center text-[10px] lg:text-[16px]  font-light justify-center items-center mx-10 lg:mx-auto">
+              <p>
+                "Enjoy seamless trading with advanced analytics, market
+                insights, and personalized support for{" "}
+                <span className="text-[#8341f5] font-bold">STOCKS</span>,{" "}
+                <span className="text-[#8341f5] font-bold">CRYPTO</span> and{" "}
+                <span className="text-[#8341f5] font-bold">OPTIONS</span>. Take
+                your trading strategy to the next level with us!"
+              </p>
+            </div>
+
+            <div className="flex gap-x-2 justify-center">
+              <button className="bg-[#946CFF] text-white font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4">
+                Login
+              </button>
+              <button className="border border-white text-white  font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4">
+                GET STARTED
+              </button>
+            </div>
           </div>
-
-          <button className="bg-[#DCF536] text-black font-extrabold py-2 px-4 sm:px-6 rounded-full mt-4">
-            START NOW
-          </button>
         </div>
-      </div>
 
-      <div className="mt-[80px] lg:mt-10 px-4 sm:px-8">
-        <Image
-          src={hero}
-          alt="Hero Image"
-          className="lg:w-full lg:h-full  h-[180px]  w-[480px] mx-auto"
-        />
-      </div>
-    </Container>
+        {/* Hero Image */}
+        <div className="flex justify-center items-center w-full mt-8">
+          <Image
+            src={hero}
+            alt="Hero Image"
+            className="max-w-[350px]  lg:max-w-[800px] h-auto"
+          />
+        </div>
+      </Container>
+    </div>
   );
 };
 

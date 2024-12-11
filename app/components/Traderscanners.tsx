@@ -27,7 +27,7 @@ const TradeScanners = () => {
             powerful tools.
           </p>
           <div className="flex justify-center lg:justify-start">
-            <button className="px-6 py-2 bg-purple-700 font-poppins text-white rounded-lg shadow hover:bg-blue-600">
+            <button className="px-6 py-2 bg-[#946CFF]  text-white rounded-lg shadow hover:bg-blue-600">
               Read More
             </button>
           </div>

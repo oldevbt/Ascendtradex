@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-10 font-poppins  ">
+    <footer className="w-full pt-10   ">
       <div className="flex flex-col w-full max-w-[1250px] mx-auto px-5 gap-10">
         <div className="flex flex-col md:flex-row  items-center justify-between">
           {/* Logo and Text Section */}
@@ -16,7 +16,7 @@ const Footer = () => {
               alt="Titan Logo"
               className="justify-center items-center w-20 h-20"
             />
-            <p className="text-center md:text-left font-poppins font-normal text-[#EAECF0]">
+            <p className="text-center md:text-left  font-normal text-[#EAECF0]">
               Titan Trading Platform - The Pioneer Boundless Trading Ecosystem
             </p>
           </div>

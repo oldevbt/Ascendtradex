@@ -27,7 +27,7 @@ const Features = () => {
   ];
 
   return (
-    <div className="bg-[#0A0E25] text-white py-8">
+    <div className=" text-white py-8">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 lg:px-12 space-y-8 lg:space-y-0">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center space-x-4">
@@ -39,10 +39,13 @@ const Features = () => {
               />
             </div>
             <div>
-              <h4 className={`text-lg font-semibold ${feature.color}`}>
-                {feature.title}
-              </h4>
-              <p className="text-sm text-gray-300">{feature.description}</p>
+              <p className="text-[18.75px] text-[#D1D4DC] max-w-[300px]">
+                <span className={`text-lg font-semibold ${feature.color}`}>
+                  {feature.title}
+                </span>
+                &nbsp; {/* Adds a space */}
+                {feature.description}
+              </p>
             </div>
           </div>
         ))}

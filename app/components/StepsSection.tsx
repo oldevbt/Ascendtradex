@@ -48,12 +48,8 @@ const StepsSection = () => {
               <div className="text-5xl font-bold text-blue-500 mb-4">
                 {step.number}
               </div>
-              <h3 className="text-lg  font-poppins font-bold mb-2">
-                {step.title}
-              </h3>
-              <p className="text-[15px] font-poppins text-white">
-                {step.description}
-              </p>
+              <h3 className="text-lg   font-bold mb-2">{step.title}</h3>
+              <p className="text-[15px]  text-white">{step.description}</p>
             </div>
           ))}
         </div>

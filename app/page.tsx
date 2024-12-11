@@ -105,18 +105,18 @@ export default function Home() {
           </div>
         </div>
       )}
-      <div className="bg-custom-gradient h-screen">
+      <div className="">
         <Header />
         <Hero />
       </div>
-      <div className="mt-[150px] lg:mt-[300px]">
+      <div className="">
         <FirstSection />
         <Sectrions />
 
         <Stats />
 
         <Feature3 />
-        <RealTimeMarketAnalytics />
+
         <StepsSection />
 
         <BrokerStatement />

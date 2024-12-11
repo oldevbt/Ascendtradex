@@ -4,7 +4,7 @@ import Container from "./Container";
 import Image from "next/image";
 import Titan from "@/assets/Ascend Logo.png";
 import { CgMenuBoxed } from "react-icons/cg";
-import { IoClose } from "react-icons/io5"; // Close icon
+import { IoClose } from "react-icons/io5";
 
 const Header = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -13,48 +13,58 @@ const Header = () => {
 
   return (
     <>
-      <Container>
-        <div className="flex flex-row justify-between mt-5">
-          <Image src={Titan} alt="Logo" className="w-10 h-10" />
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex font-poppins bg-gray">
-            <ul className="flex text-[#98A2B3] font-semibold justify-center  items-center py-2 px-3 gap-x-5">
-              <li>Home</li>
-              <li>About Company</li>
-              <li>Features</li>
-              <li>Solutions</li>
-              <li>Pricing</li>
-              <li>Token</li>
-            </ul>
-          </nav>
-          {/* Desktop Login/Sign Up */}
-          <div className="hidden md:flex gap-x-2 items-center">
-            <Link href="/Login" className="font-semibold">
-              Client Login
-            </Link>
+      {/* Header with fixed positioning */}
+      <div className="fixed top-0 bg-[#101828] left-0 w-full shadow-md z-50">
+        <Container>
+          <div className="flex flex-row justify-between items-center mt-5">
+            <div className="flex items-center">
+              <Image src={Titan} alt="Logo" className="w-10 h-10" />
+              <h1 className="text-lg font-bold">AscendTradex</h1>
+            </div>
 
-            <Link
-              href="/SignUp"
-              className="bg-white font-semibold rounded-md text-black py-2 px-4"
-            >
-              Open Account
-            </Link>
-          </div>
-          {/* Mobile Menu Icon */}
-          <div className="flex lg:hidden text-3xl cursor-pointer">
-            <div onClick={toggleSidebar}>
-              <div className="text-inherit">
-                <CgMenuBoxed />
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex  ">
+              <ul className="flex text-white text-[16px] font-semibold justify-center items-center py-2 px-3 gap-x-5">
+                <li>Home</li>
+                <li>Broker</li>
+                <li>Products</li>
+                <li>News</li>
+                <li>Trading</li>
+                <li>More</li>
+              </ul>
+            </nav>
+            {/* Desktop Login/Sign Up */}
+            <div className="hidden md:flex gap-x-2 items-center">
+              <Link
+                href="/SignUp"
+                className="bg-[#946CFF] text-white font-bold rounded-md py-2 px-4"
+              >
+                Open Account
+              </Link>
+
+              <Link
+                href="/Login"
+                className="font-bold border border-[#946CFF] rounded-md py-2 px-4"
+              >
+                Client Login
+              </Link>
+            </div>
+            {/* Mobile Menu Icon */}
+            <div className="flex lg:hidden text-3xl cursor-pointer">
+              <div onClick={toggleSidebar}>
+                <div className="text-inherit">
+                  <CgMenuBoxed />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
 
       {/* Sidebar */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-y-0 right-0 w-80 bg-gradient-to-b from-purple-600 to-blue-500 text-white z-50 rounded-l-2xl font-poppins shadow-lg flex flex-col"
+          className="fixed inset-y-0 right-0 w-80 bg-gradient-to-b from-purple-600 to-blue-500 text-white z-50 rounded-l-2xl  shadow-lg flex flex-col"
           style={{ transition: "transform 0.3s ease-in-out" }}
         >
           {/* Close Button */}

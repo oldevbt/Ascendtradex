@@ -2,7 +2,7 @@ import React from "react";
 
 const OnboardingForm: React.FC = () => {
   return (
-    <div className="h-[100vh]  flex justify-center items-center text-white font-poppins overflow-scroll">
+    <div className="h-[100vh]  flex justify-center items-center text-white  overflow-scroll">
       {/* Main Content */}
       <div className="flex-1 flex flex-col pb-0  lg:p-8">
         {/* Form */}

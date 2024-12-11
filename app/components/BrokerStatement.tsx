@@ -17,7 +17,7 @@ const BrokerStatement = () => {
             investment approach, with profitable transactions consistently
             recorded across various sectors.
           </p>
-          <button className="px-6 py-2 bg-purple-700 font-poppins text-white rounded-lg shadow ">
+          <button className="px-6 py-2 bg-[#946CFF] text-white rounded-lg shadow ">
             View Report
           </button>
         </div>

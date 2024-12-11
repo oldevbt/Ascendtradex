@@ -10,13 +10,13 @@ const FundYourAccount = () => {
         {/* Left Content */}
         <div className="lg:w-1/2 text-center lg:text-left">
           <h2 className="text-4xl font-bold">
-            <span className="text-purple-500">Fund</span> Your Account
+            <span className="text-[#946CFF]">Fund</span> Your Account
           </h2>
           <p className="text-gray-300 mt-4">
             AscendTradex offers a wide range of instant, simple, and secure
             funding methods to suit your needs.
           </p>
-          <button className="mt-8 px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg shadow-lg text-white text-lg font-semibold flex items-center justify-center gap-2">
+          <button className="mt-8 px-8 py-3 bg-[#946CFF] hover:bg-purple-700 rounded-lg shadow-lg text-white text-lg font-semibold flex items-center justify-center gap-2">
             Start Trading Now
             <span className="material-icons">
               <CgArrowRight />

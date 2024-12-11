@@ -6,9 +6,7 @@ const OnboardingOne = () => {
     <div className="bg-[#242731] rounded-lg">
       <Image src={sit} alt="sit" />
       <div className="space-y-3 flex flex-col">
-        <h1 className="font-bold text-[21px] font-poppins">
-          Personalise your experience
-        </h1>
+        <h1 className="font-bold text-[21px] ">Personalise your experience</h1>
         <p className="font-normal text-[14px]">
           We're going to ask you a few queations to get you through the account
           set up process, and suggest strategy that best fits you.

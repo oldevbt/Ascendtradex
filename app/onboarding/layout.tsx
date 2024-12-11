@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="flex  font-poppins bg-[#1F2127]">
+    <div className="flex   bg-[#1F2127]">
       {/* Sidebar */}
       <Sidebar />
 

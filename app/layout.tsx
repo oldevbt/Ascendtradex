@@ -1,26 +1,13 @@
 import type { Metadata } from "next";
-
-import { Syne, Poppins, Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import ToasterProvider from "./providers/ToastProvider";
 
-// Google Fonts
-const syne = Syne({
+// Google Fonts: Roboto
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-syne",
-  weight: ["400", "500", "600", "700"], // Add the weights you need
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["300", "400", "600", "700"], // Add the weights you need
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["400", "500", "600", "700"], // Add the weights you need
+  variable: "--font-roboto",
+  weight: ["300", "400", "500", "700"], // Add the weights you need
 });
 
 export const metadata: Metadata = {
@@ -35,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={` ${syne.variable} ${poppins.variable} ${inter.variable} antialiased`}
-      >
+      <body className={`${roboto.variable} antialiased bg-[#101828]`}>
         <ToasterProvider />
         {children}
       </body>
