@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const InvestmentComponent = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-black text-white py-16 px-6 md:px-20">
+    <div className="bg-[#111828]  text-white py-16 px-6 md:px-20">
       {/* Section Container */}
       <div className="space-y-16">
         {/* Section 1: Invest in Shares */}

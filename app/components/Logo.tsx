@@ -15,16 +15,16 @@ import acads from "@/assets/acadLabs.webp";
 import giro from "@/assets/giroswap.webp";
 import bit from "@/assets/bitget.webp";
 
-const logos = [Gamb, Neptune, Ring, Thruster, partner, deGaurd, giro, bit];
+const logos = [Neptune, Ring, Thruster, partner, deGaurd, giro, bit];
 
 const Logo = () => {
   return (
-    <div className="relative overflow-hidden w-full  py-10">
+    <div className=" relative overflow-hidden w-full  py-10">
       {/* Scrolling container */}
       <div className="flex animate-scroll gap-10 items-center">
         {/* Repeat the logos to create an infinite scrolling effect */}
         {[...logos, ...logos].map((logo, index) => (
-          <div key={index} className="flex-shrink-0">
+          <div key={index} className="flex-shrink-0 bg-[#111828]">
             <Image
               src={logo}
               alt={`Logo ${index + 1}`}

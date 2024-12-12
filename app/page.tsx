@@ -21,6 +21,8 @@ import PaymentOptions from "./components/PaymentOptions";
 import VoiceflowWidget from "./components/VoiceflowWidget";
 import FundYourAccount from "./components/FundAccount";
 import Sectrions from "./components/Sectrions";
+import CustomerReview from "./components/CustomerReview";
+import Lovesection from "./components/Lovesection";
 
 export default function Home() {
   const [notification, setNotification] = useState<{
@@ -122,9 +124,12 @@ export default function Home() {
         <BrokerStatement />
         <TradeScanners />
         <FundYourAccount />
+        <CustomerReview />
         <VoiceflowWidget />
+
         <PaymentOptions />
-        <Logo />
+        <Lovesection />
+
         <Footer />
       </div>
     </div>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import hero from "@/assets/header-main.png";
 import Container from "./Container";
 import background from "@/assets/bgg.svg";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -22,8 +23,8 @@ const Hero = () => {
       <Container>
         <div className="flex flex-col mt-20 pt-16 lg:h-auto items-center justify-center space-y-8 relative">
           {/* Text Content */}
-          <div className="text-center lg:space-y-6 space-y-3 px-4 sm:px-8">
-            <h1 className="text-[#FFFF] bg-[#2F3A4A] font-medium lg:text-[14px] text-[8px] py-2 px-6 flex items-center justify-center border rounded-full border-[#5E6871]  mx-10  w-[400px] lg:w-fit lg:mx-auto">
+          <div className="text-center lg:space-y-6 space-y-3  pt-5    mx-10 ">
+            <h1 className="text-[#FFFF] bg-[#2F3A4A] font-medium lg:text-[14px] text-[8px] py-2 px-6 flex items-center justify-center border rounded-full border-[#5E6871]  mx-3  w-[400px] lg:w-fit lg:mx-auto">
               Unlock Your Trading Potential with our expert insights, real-time
               market data, and powerful tools.
             </h1>
@@ -44,12 +45,18 @@ const Hero = () => {
             </div>
 
             <div className="flex gap-x-2 justify-center">
-              <button className="bg-[#946CFF] text-white font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4">
+              <Link
+                href="/Login"
+                className="bg-[#946CFF] text-white font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4"
+              >
                 Login
-              </button>
-              <button className="border border-white text-white  font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4">
+              </Link>
+              <Link
+                href="/SignUp"
+                className="border border-white text-white  font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4"
+              >
                 GET STARTED
-              </button>
+              </Link>
             </div>
           </div>
         </div>

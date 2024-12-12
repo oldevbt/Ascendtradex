@@ -5,7 +5,7 @@ import { CgArrowRight } from "react-icons/cg";
 
 const FundYourAccount = () => {
   return (
-    <section className="bg-[#0B0E21] py-16 text-white relative overflow-hidden">
+    <section className="bg-[#111828]  py-16 text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
         {/* Left Content */}
         <div className="lg:w-1/2 text-center lg:text-left">

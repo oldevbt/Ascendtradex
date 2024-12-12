@@ -4,7 +4,7 @@ import BTC from "@/assets/options/bitcoin.png";
 import USDT from "@/assets/options/lite.png";
 import BNB from "@/assets/options/Binance.png";
 import ETH from "@/assets/options/Ethereum.png";
-import LTC from "@/assets/options/lite.png";
+import LTC from "@/assets/options/dodge.png";
 import TES from "@/assets/options/tesla.png";
 
 import Image from "next/image";
@@ -19,7 +19,7 @@ const PaymentOptions = () => {
   ];
 
   return (
-    <section className="bg-[#0b0d2c] py-16 text-white">
+    <section className="bg-[#111828]  py-16 text-white">
       <div className="max-w-7xl mx-auto px-6  text-white text-center">
         <h2 className="text-3xl font-bold mb-2 ">Payment Options</h2>
         <h2 className="text-lg  mb-6 ">
@@ -48,7 +48,7 @@ const PaymentOptions = () => {
             </div>
           ))}
         </div>
-        <button className="px-6 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
+        <button className="px-6 py-2 bg-[#946CFF] text-white rounded-lg shadow ">
           Download Certificate Of Incorporation
         </button>
       </div>
