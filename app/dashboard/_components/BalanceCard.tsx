@@ -17,7 +17,7 @@ const BalanceCard = () => {
 
       // Assuming the balance is part of the response. Adjust according to your API structure.
       setBalance({
-        usd: data.balanceUSD || 0.010408,
+        usd: data.balanceUSD || 1050,
         btc: 0.010408, // Hardcoded BTC value
       });
     } catch (error) {

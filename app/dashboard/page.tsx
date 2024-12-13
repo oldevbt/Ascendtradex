@@ -136,7 +136,7 @@ const Dashboard = () => {
 
   return (
     <div className="">
-      <div className="rounded-lg border  w-[370px] lg:w-full border-dashed bg-[#705D3E] pt-4 my-4 p-4  flex flex-wrap justify-between items-center">
+      {/* <div className="rounded-lg border  w-[370px] lg:w-full border-dashed bg-[#705D3E] pt-4 my-4 p-4  flex flex-wrap justify-between items-center">
         <h1 className="text-white  text-[6px] lg:text-sm">
           Empty Balance! Your balance is empty. Please make a deposit for your
           next trade. Click on the deposit button.
@@ -145,7 +145,7 @@ const Dashboard = () => {
         <div className="text-black text-lg cursor-pointer">
           <CgClose />
         </div>
-      </div>
+      </div> */}
 
       {/* Balance Section */}
       <div className="bg-[#1F2129] p-6 rounded-lg flex flex-col gap-4">
