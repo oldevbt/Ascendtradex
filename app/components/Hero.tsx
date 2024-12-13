@@ -24,10 +24,12 @@ const Hero = () => {
         <div className="flex flex-col mt-20 pt-16 items-center justify-center space-y-6 sm:space-y-8 relative">
           {/* Text Content */}
           <div className="text-center lg:space-y-6 space-y-3 pt-5 mx-4 ">
-            <h1 className="text-[#FFFF] bg-[#2F3A4A] font-medium text-[8px] lg:text-base py-2 px-2 flex items-center justify-center border rounded-full border-[#5E6871] mx-3 w-[400px]  lg:w-fit lg:mx-auto">
-              Unlock Your Trading Potential with our expert insights, real-time
-              market data, and powerful tools.
-            </h1>
+            <div>
+              <h1 className="text-[#FFFF] bg-[#2F3A4A] font-medium text-[6.5px] lg:text-base py-2 px-2 flex items-center justify-center border rounded-full border-[#5E6871] w-[300px]  lg:w-fit mx-auto">
+                Unlock Your Trading Potential with our expert insights,
+                real-time market data, and powerful tools.
+              </h1>
+            </div>
 
             <h2 className="text-[24px] sm:text-[32px] lg:text-[42.5px] text-[#ffff] lg:leading-[58.5px] font-bold max-w-[800px] mx-auto">
               Trade seamlessly with cutting-edge analytics
@@ -66,7 +68,7 @@ const Hero = () => {
           <Image
             src={hero}
             alt="Hero Image"
-            className="max-w-[350px] sm:max-w-[500px] lg:max-w-[800px] h-auto"
+            className="max-w-[300px]  lg:max-w-[800px] h-auto"
           />
         </div>
       </Container>
