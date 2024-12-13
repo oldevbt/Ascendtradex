@@ -25,16 +25,26 @@ const InvestmentComponent = () => {
             </p>
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400 p-4 rounded-lg">
-                <p className="text-xl font-bold text-[#946CFF]">20,000+</p>
-                <p className="text-gray-400 text-sm">Shares</p>
+                <p className=" text-[16px] lg:text-xl  font-bold text-[#946CFF]">
+                  20,000+
+                </p>
+                <p className="text-gray-400 text-[12px] lg:text-sm">Shares</p>
               </div>
               <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400 p-4 rounded-lg">
-                <p className="text-xl font-bold text-[#946CFF]">20:1</p>
-                <p className="text-gray-400 text-sm">Level of Leverage</p>
+                <p className="text-[16px] lg:text-xl font-bold text-[#946CFF]">
+                  20:1
+                </p>
+                <p className="text-gray-400 text-[12px] lg:text-sm">
+                  Level of Leverage
+                </p>
               </div>
               <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400 p-4 rounded-lg">
-                <p className="text-xl font-bold text-[#946CFF]">0%</p>
-                <p className="text-gray-400 text-sm">Commission</p>
+                <p className="text-[16px] lg:text-xl  font-bold text-[#946CFF]">
+                  0%
+                </p>
+                <p className="text-gray-400  text-[12px] lg:text-sm">
+                  Commission
+                </p>
               </div>
             </div>
           </div>
@@ -90,16 +100,26 @@ const InvestmentComponent = () => {
             </p>
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400 p-4 rounded-lg">
-                <p className="text-xl font-bold text-[#946CFF]">20,000+</p>
-                <p className="text-gray-400 text-sm">Shares</p>
+                <p className=" text-[16px] lg:text-xl  font-bold text-[#946CFF]">
+                  20,000+
+                </p>
+                <p className="text-gray-400 text-[12px] lg:text-sm">Shares</p>
               </div>
               <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400 p-4 rounded-lg">
-                <p className="text-xl font-bold text-[#946CFF]">20:1</p>
-                <p className="text-gray-400 text-sm">Level of Leverage</p>
+                <p className="text-[16px] lg:text-xl font-bold text-[#946CFF]">
+                  20:1
+                </p>
+                <p className="text-gray-400 text-[12px] lg:text-sm">
+                  Level of Leverage
+                </p>
               </div>
               <div className="bg-black bg-opacity-50 text-center border-2 border-gray-400 p-4 rounded-lg">
-                <p className="text-xl font-bold text-[#946CFF]">0%</p>
-                <p className="text-gray-400 text-sm">Commission</p>
+                <p className="text-[16px] lg:text-xl  font-bold text-[#946CFF]">
+                  0%
+                </p>
+                <p className="text-gray-400  text-[12px] lg:text-sm">
+                  Commission
+                </p>
               </div>
             </div>
           </div>
