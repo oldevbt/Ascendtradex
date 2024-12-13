@@ -88,7 +88,7 @@ const Dashboard = () => {
 
   const [balance, setBalance] = useState({
     usd: 0.0,
-    btc: 0.0, // Hardcoded BTC value
+    btc: 0.010408, // Hardcoded BTC value
   });
 
   const fetchBalance = async () => {
