@@ -12,19 +12,19 @@ const Hero = () => {
     <div className="relative">
       {/* Background Image */}
       <div
-        className="absolute bottom-36 right-80  w-[500px] h-full bg-no-repeat"
+        className="absolute bottom-36 right-10 sm:right-20 md:right-32 lg:right-80 w-[300px] sm:w-[400px] md:w-[500px] h-full bg-no-repeat"
         style={{
           backgroundImage: `url(${background.src})`,
-          backgroundPosition: "top right", // Ensure it's in the top-right corner
-          backgroundSize: "contain", // Adjust the size of the background image
+          backgroundPosition: "top right",
+          backgroundSize: "contain",
         }}
       ></div>
 
       <Container>
-        <div className="flex flex-col mt-20 pt-16 lg:h-auto items-center justify-center space-y-8 relative">
+        <div className="flex flex-col mt-20 pt-16 items-center justify-center space-y-6 sm:space-y-8 relative">
           {/* Text Content */}
-          <div className="text-center lg:space-y-6 space-y-3  pt-5    mx-10 ">
-            <h1 className="text-[#FFFF] bg-[#2F3A4A] font-medium lg:text-[14px] text-[8px] py-2 px-6 flex items-center justify-center border rounded-full border-[#5E6871]  mx-3  w-[400px] lg:w-fit lg:mx-auto">
+          <div className="text-center lg:space-y-6 space-y-3 pt-5 mx-4 ">
+            <h1 className="text-[#FFFF] bg-[#2F3A4A] font-medium text-[8px] lg:text-base py-2 px-2 flex items-center justify-center border rounded-full border-[#5E6871] mx-3 w-[400px]  lg:w-fit lg:mx-auto">
               Unlock Your Trading Potential with our expert insights, real-time
               market data, and powerful tools.
             </h1>
@@ -33,7 +33,7 @@ const Hero = () => {
               Trade seamlessly with cutting-edge analytics
             </h2>
 
-            <div className="flex flex-col max-w-[800px]  text-[#B0B3BC] text-center text-[10px] lg:text-[16px]  font-light justify-center items-center mx-10 lg:mx-auto">
+            <div className="flex flex-col max-w-[800px] text-[#B0B3BC] text-[10px] sm:text-[14px] lg:text-[16px] font-light justify-center items-center mx-6 sm:mx-10 lg:mx-auto">
               <p>
                 "Enjoy seamless trading with advanced analytics, market
                 insights, and personalized support for{" "}
@@ -53,7 +53,7 @@ const Hero = () => {
               </Link>
               <Link
                 href="/SignUp"
-                className="border border-white text-white  font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4"
+                className="border border-white text-white font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4"
               >
                 GET STARTED
               </Link>
@@ -66,7 +66,7 @@ const Hero = () => {
           <Image
             src={hero}
             alt="Hero Image"
-            className="max-w-[350px]  lg:max-w-[800px] h-auto"
+            className="max-w-[350px] sm:max-w-[500px] lg:max-w-[800px] h-auto"
           />
         </div>
       </Container>
