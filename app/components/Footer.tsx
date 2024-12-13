@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BsDiscord, BsInstagram, BsTelegram, BsYoutube } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import download from "@/assets/downloa.svg";
 
 const Footer = () => {
   return (
@@ -44,7 +45,7 @@ const Footer = () => {
                 AscendTradex
               </span>
             </div>
-            <p className="text-center md:text-left text-sm font-light text-[#EAECF0] leading-relaxed">
+            <p className="text-left   text-sm font-light text-[#EAECF0] leading-relaxed">
               AscendTradex’s mission is to create the best trading experience
               for retail and institutional clients alike, allowing traders to
               focus more on their trading. Built by traders for traders,
@@ -127,6 +128,10 @@ const Footer = () => {
         </div>
         {/* Divider */}
         <div className="border-t border-gray-700"></div>
+        <div>
+          <h1 className=" text-[15px]  mb-3">We accept:</h1>
+          <Image src={download} alt="" />
+        </div>
         <ul className="list-disc text-[12px] font-light text-[#9DA6BB] space-y-3 pl-4 w-full">
           <li>
             Copyright © : 2005-2024 TitanTradex Limited. All rights reserved.
@@ -134,40 +139,20 @@ const Footer = () => {
             Authority (FSA) with Securities Dealer’s license number SD018..
           </li>
           <li>
-            Notice: You must be 18 years old, or of legal age as determined in
-            your country. Upon registering an account with TitanTradex Ltd, you
-            acknowledge that you are registering at your own free will, without
-            solicitation on behalf of TitanTradex Ltd.
+            <span className="font-semibold">Notice:</span> You must be 18 years
+            old, or of legal age as determined in your country. Upon registering
+            an account with TitanTradex Ltd, you acknowledge that you are
+            registering at your own free will, without solicitation on behalf of
+            TitanTradex Ltd.
           </li>
           <li>
-            Risk Warning: Trading Stocks and CFDs carries a high level of risk
-            to your capital and you should only trade with experts that won't
-            lose your money. Trading Stocks and CFDs may not be suitable for all
-            investors, so please ensure that you seek independent advice if from
-            expert traders.
+            <span className="font-semibold">Risk Warning:</span> Trading Stocks
+            and CFDs carries a high level of risk to your capital and you should
+            only trade with experts that won't lose your money. Trading Stocks
+            and CFDs may not be suitable for all investors, so please ensure
+            that you seek independent advice if from expert traders.
           </li>
         </ul>
-        {/* Social Media Links */}
-        <div className="flex justify-start items-center gap-x-6">
-          <a href="#" className="hover:text-gray-400">
-            <BsTelegram size={20} />
-          </a>
-          <a href="#" className="hover:text-gray-400">
-            <FaXTwitter size={20} />
-          </a>
-          <a href="#" className="hover:text-gray-400">
-            <BsInstagram size={20} />
-          </a>
-          <a href="#" className="hover:text-gray-400">
-            <FaFacebook size={20} />
-          </a>
-          <a href="#" className="hover:text-gray-400">
-            <BsDiscord size={20} />
-          </a>
-          <a href="#" className="hover:text-gray-400">
-            <BsYoutube size={20} />
-          </a>
-        </div>
       </div>
     </footer>
   );

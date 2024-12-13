@@ -23,6 +23,7 @@ import FundYourAccount from "./components/FundAccount";
 import Sectrions from "./components/Sectrions";
 import CustomerReview from "./components/CustomerReview";
 import Lovesection from "./components/Lovesection";
+import GlobalMarket from "./components/GlobalMarket";
 
 export default function Home() {
   const [notification, setNotification] = useState<{
@@ -116,6 +117,7 @@ export default function Home() {
         <Sectrions />
 
         <Stats />
+        <GlobalMarket />
 
         <Feature3 />
 

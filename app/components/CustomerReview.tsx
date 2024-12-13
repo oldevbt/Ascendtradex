@@ -36,7 +36,7 @@ const CustomerReview = () => {
               "Amazing experience! The support team is fantastic, and the tools
               have significantly improved my trading."
             </p>
-            <div className="mt-4 flex items-center text-left">
+            <div className="mt-8 flex items-center text-left">
               <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white text-lg font-bold">
                 <Image src={Ima} alt="" />
               </div>
@@ -52,7 +52,7 @@ const CustomerReview = () => {
               "I highly recommend Titan Tradex to anyone looking to get started
               with trading. It’s intuitive and reliable."
             </p>
-            <div className="mt-4 flex items-center text-left">
+            <div className="mt-8 flex items-center text-left">
               <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white text-lg font-bold">
                 <Image src={Ima} alt="" />
               </div>

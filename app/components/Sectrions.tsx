@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import phoneImage from "@/assets/phones/funded-trading.png"; // Replace with your image path
+import Link from "next/link";
 
 const Sectrions = () => {
   return (
@@ -18,7 +19,7 @@ const Sectrions = () => {
             mirror the Lead Trader’s positions in real-time.
           </p>
           <button className="bg-[#946CFF] hover:bg-[#7A5FE3] text-white text-sm sm:text-base py-3 px-6 rounded-lg font-medium transition">
-            Create an account — It’s free
+            <Link href="/SignUp">Create an account — It’s free</Link>
           </button>
         </div>
 
