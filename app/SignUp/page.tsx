@@ -127,7 +127,7 @@ const SignUpPage = () => {
       {/* Right Section */}
       <div className="flex w-full lg:w-1/2 lg:mx-auto mx-3  h-screen lg:h-auto items-center justify-center bg-gray-900">
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
-          <div className="flex items-center">
+          <div className="flex items-center mb-8">
             <Image src={Titan} alt="Logo" className="w-10 h-10" />
             <h1 className="text-lg font-bold text-black">AscendTradex</h1>
           </div>
