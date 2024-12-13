@@ -35,7 +35,7 @@ const Hero = () => {
               Trade seamlessly with cutting-edge analytics
             </h2>
 
-            <div className="flex flex-col w-[370px] text-[#B0B3BC] text-[10px] sm:text-[14px] lg:text-[16px] font-light justify-center items-center mx-6 sm:mx-10 lg:mx-auto">
+            <div className="flex flex-col max-w-[800px] text-[#B0B3BC] text-[10px] sm:text-[14px] lg:text-[16px] font-light justify-center items-center mx-6 sm:mx-10 lg:mx-auto">
               <p>
                 "Enjoy seamless trading with advanced analytics, market
                 insights, and personalized support for{" "}

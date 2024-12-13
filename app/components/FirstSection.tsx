@@ -11,7 +11,7 @@ const FirstSection = () => {
     <div className=" text-white min-h-screen">
       {/* Hero Section */}
       <section className="text-center py-8 sm:py-16 mt-6 sm:mt-10 px-4 sm:px-6">
-        <h2 className="text-[#946CFF] text-[16px] w-[400px] lg:text-2xl font-semibold mb-4 sm:mb-6">
+        <h2 className="text-[#946CFF] text-[12px] w-[400px] lg:text-2xl font-semibold lg:mb-4 mb-2">
           Discover the advantages of choosing AscendTradex
         </h2>
         <h1 className="text-2xl text-[#D1D4DC]  lg:text-5xl font-bold  mb-4 sm:mb-6">
