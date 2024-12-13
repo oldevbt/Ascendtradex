@@ -37,14 +37,14 @@ const Header = () => {
             <div className="hidden md:flex gap-x-2 items-center">
               <Link
                 href="/SignUp"
-                className="bg-[#946CFF] text-white font-bold rounded-md py-2 px-4"
+                className="bg-[#946CFF] cursor-pointer text-white font-bold rounded-md py-2 px-4"
               >
                 Open Account
               </Link>
 
               <Link
                 href="/Login"
-                className="font-bold border border-[#946CFF] rounded-md py-2 px-4"
+                className="font-bold border cursor-pointer border-[#946CFF] rounded-md py-2 px-4"
               >
                 Client Login
               </Link>

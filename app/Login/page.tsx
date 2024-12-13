@@ -7,6 +7,7 @@ import Image from "next/image";
 import PhoneTrade from "@/assets/phone-trade.png";
 import { RingLoader } from "react-spinners"; // Add a spinner component
 import Link from "next/link";
+import Titan from "@/assets/Ascend Logo.png";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -50,8 +51,12 @@ const LoginPage = () => {
         </div>
       </div>
       {/* Right Section */}
-      <div className="flex w-full lg:w-1/2   h-screen lg:h-auto  items-center justify-center bg-gray-900">
+      <div className="flex w-full lg:w-1/2 lg:mx-auto mx-3  h-screen lg:h-auto  items-center justify-center bg-gray-900">
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+          <div className="flex items-center ">
+            <Image src={Titan} alt="Logo" className="w-10 h-10" />
+            <h1 className="text-lg font-bold text-black">AscendTradex</h1>
+          </div>
           <h2 className="text-2xl font-bold text-gray-800 text-center">
             Sign In Trading Account
           </h2>

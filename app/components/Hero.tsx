@@ -6,8 +6,18 @@ import hero from "@/assets/header-main.png";
 import Container from "./Container";
 import background from "@/assets/bgg.svg";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
+  const router = useRouter();
+
+  const handleLoginClick = () => {
+    router.push("/Login");
+  };
+
+  const handleSignUpClick = () => {
+    router.push("/SignUp");
+  };
   return (
     <div className="relative">
       {/* Background Image */}
@@ -49,13 +59,13 @@ const Hero = () => {
             <div className="flex gap-x-2 justify-center -mt-5">
               <Link
                 href="/Login"
-                className="bg-[#946CFF] text-white font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4"
+                className="bg-[#946CFF] z-10 text-white font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4"
               >
                 Login
               </Link>
               <Link
                 href="/SignUp"
-                className="border border-white text-white font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4"
+                className="border z-10 border-white text-white font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4"
               >
                 GET STARTED
               </Link>

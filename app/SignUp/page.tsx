@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { RingLoader } from "react-spinners"; // Import the spinner
 
 import { useRouter } from "next/navigation";
+import Titan from "@/assets/Ascend Logo.png";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -124,8 +125,12 @@ const SignUpPage = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex w-full lg:w-1/2  h-screen lg:h-auto items-center justify-center bg-gray-900">
+      <div className="flex w-full lg:w-1/2 lg:mx-auto mx-3  h-screen lg:h-auto items-center justify-center bg-gray-900">
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
+          <div className="flex items-center">
+            <Image src={Titan} alt="Logo" className="w-10 h-10" />
+            <h1 className="text-lg font-bold text-black">AscendTradex</h1>
+          </div>
           <div className="text-center mb-6 mt-6">
             <h1 className="text-3xl font-bold text-gray-800">Sign Up</h1>
             <p className="text-gray-600">
