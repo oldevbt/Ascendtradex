@@ -1,5 +1,6 @@
 import prisma from "@/app/libs/prismadb"; // Adjust the path as necessary
 import nodemailer from "nodemailer"; // For sending emails
+import { v4 as uuidv4 } from "uuid"; // For generating unique reset tokens
 
 // Handle POST requests
 export async function POST(req: Request) {
@@ -27,11 +28,11 @@ export async function POST(req: Request) {
       );
     }
 
-    // Generate a six-digit reset code
-    const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
+    // Generate a unique reset token and expiration time
+    const resetCode = uuidv4();
     const resetCodeExpiration = new Date(Date.now() + 3600000); // 1 hour from now
 
-    // Update the user's reset code and expiration in the database
+    // Update the user's reset token and expiration in the database
     await prisma.user.update({
       where: { email },
       data: {
@@ -45,26 +46,29 @@ export async function POST(req: Request) {
       service: "Gmail",
       auth: {
         user: process.env.EMAIL_USER, // Gmail username
-        pass: process.env.EMAIL_PASSWORD, // Gmail password or app-specific password
+        pass: process.env.EMAIL_PASS, // Gmail password or app-specific password
       },
     });
 
-    // Send the email with the six-digit code
+    // Create the reset link
+    const resetLink = `${process.env.BASE_URL}/verifyPassword?token=${resetCode}`;
+
+    // Send the email with the reset link
     await transporter.sendMail({
       from: `"Your App Name" <${process.env.EMAIL_USER}>`, // Sender address
       to: email, // Recipient email
-      subject: "Password Reset Code",
+      subject: "Password Reset Request",
       html: `
         <p>Hi ${user.firstName || "User"},</p>
-        <p>We received a request to reset your password. Use the code below to proceed:</p>
-        <h2>${resetCode}</h2>
-        <p>This code will expire in 1 hour. If you did not request a password reset, please ignore this email.</p>
+        <p>We received a request to reset your password. Click the link below to proceed:</p>
+        <a href="${resetLink}">Reset Password</a>
+        <p>This link will expire in 1 hour. If you did not request a password reset, please ignore this email.</p>
         <p>Thank you!</p>
       `,
     });
 
     return new Response(
-      JSON.stringify({ message: "Password reset code sent successfully" }),
+      JSON.stringify({ message: "Password reset link sent successfully" }),
       { status: 200 }
     );
   } catch (error) {

@@ -1,48 +1,51 @@
 import prisma from "@/app/libs/prismadb"; // Adjust the path as necessary
 
-// Handle POST requests
-export async function POST(req: Request) {
+// Handle GET requests for token verification
+export async function GET(req: Request) {
   try {
-    const body = await req.json();
-    const { email, resetCode } = body;
+    // Extract the token from the query parameters
+    const url = new URL(req.url);
+    const token = url.searchParams.get("token");
 
-    // Validate inputs
-    if (!email || !resetCode) {
+    // Validate token
+    if (!token || typeof token !== "string") {
       return new Response(
-        JSON.stringify({ message: "Email and reset code are required" }),
+        JSON.stringify({ message: "Invalid or missing token" }),
         { status: 400 }
       );
     }
 
-    // Find the user by email
-    const user = await prisma.user.findUnique({
-      where: { email },
+    // Check if a user exists with the given reset token and ensure it's not expired
+    const user = await prisma.user.findFirst({
+      where: {
+        resetCode: token,
+        resetCodeExpiration: {
+          gte: new Date(), // Ensure the expiration is in the future
+        },
+      },
     });
 
-    // Check if the user exists and the reset code matches
-    if (!user || user.resetCode !== resetCode) {
+    if (!user) {
       return new Response(
-        JSON.stringify({ message: "Invalid email or reset code" }),
+        JSON.stringify({ message: "Invalid or expired token" }),
         { status: 400 }
       );
     }
 
-    // Check if the reset code has expired
-    if (user.resetCodeExpiration && new Date() > user.resetCodeExpiration) {
-      return new Response(
-        JSON.stringify({ message: "Reset code has expired" }),
-        { status: 400 }
-      );
-    }
-
-    // If validation is successful, return a success response
-    return new Response(JSON.stringify({ message: "Reset code is valid" }), {
-      status: 200,
+    // Token is valid, redirect to the change password page
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: `/changePassword`,
+      },
     });
   } catch (error) {
-    console.error("Error in validateCode handler:", error);
-    return new Response(JSON.stringify({ message: "Something went wrong" }), {
-      status: 500,
-    });
+    console.error("Error verifying reset token:", error);
+    return new Response(
+      JSON.stringify({
+        message: "An error occurred while verifying the token.",
+      }),
+      { status: 500 }
+    );
   }
 }

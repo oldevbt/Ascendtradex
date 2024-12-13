@@ -99,6 +99,11 @@ const LoginPage = () => {
               />
             </div>
             {/* Submit Button */}
+            {/* <p className="text-center text-sm text-gray-600 mt-4">
+              <Link href="/SignUp" className="text-purple-600 hover:underline">
+                forgot password
+              </Link>
+            </p> */}
             <button
               type="submit"
               className="w-full bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition"

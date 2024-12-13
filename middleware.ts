@@ -5,7 +5,8 @@ const AUTHORIZED_ROUTES = [
   "/",
   "/Login",
   "/SignUp",
-  "/forget-password",
+  "/ResetPassword",
+  "/ChangePassword",
   "/verify",
   "/verified",
 ];
