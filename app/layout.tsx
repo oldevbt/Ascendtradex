@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${poppins.variable} antialiased bg-[#101828] overflow-hidden`}
+        className={`${roboto.variable} ${poppins.variable} antialiased bg-[#101828] overflow-x-hidden`}
       >
         <ToasterProvider />
         {children}
