@@ -20,7 +20,6 @@ import {
   Legend,
 } from "chart.js";
 
-// Register ChartJS components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -31,7 +30,6 @@ ChartJS.register(
   Legend
 );
 
-// Define stock logos with explicit type
 const stockLogos: Record<"TSLA" | "META" | "GOOGL" | "NFLX" | "JPM", string> = {
   TSLA: Tesla,
   META: Meta,
@@ -40,7 +38,6 @@ const stockLogos: Record<"TSLA" | "META" | "GOOGL" | "NFLX" | "JPM", string> = {
   JPM: Bitcoin,
 };
 
-// Example chart data generator
 const exampleChartData = (color: string) => ({
   labels: ["Mon", "Tue", "Wed", "Thu", "Fri"],
   datasets: [
@@ -53,8 +50,21 @@ const exampleChartData = (color: string) => ({
   ],
 });
 
-// Stock data array
-const stockData = [
+// Explicitly type the `stockData` array
+const stockData: Array<{
+  symbol: keyof typeof stockLogos;
+  price: string;
+  change: string;
+  chartData: {
+    labels: string[];
+    datasets: Array<{
+      data: number[];
+      borderColor: string;
+      borderWidth: number;
+      tension: number;
+    }>;
+  };
+}> = [
   {
     symbol: "TSLA",
     price: "182.65",
@@ -87,15 +97,13 @@ const stockData = [
   },
 ];
 
-// Define props for StockCard
 interface StockCardProps {
-  symbol: keyof typeof stockLogos; // Enforce valid keys from stockLogos
+  symbol: keyof typeof stockLogos;
   price: string;
   change: string;
-  chartData: any; // You can further specify this if needed
+  chartData: any;
 }
 
-// Stock Card Component
 const StockCard = ({ symbol, price, change, chartData }: StockCardProps) => (
   <div className="p-3 bg-[#1F2129] rounded-lg shadow-lg text-sm">
     <div className="flex justify-between items-center">
@@ -124,58 +132,23 @@ const StockCard = ({ symbol, price, change, chartData }: StockCardProps) => (
     <div className="mt-2">
       <Line
         data={chartData}
-        options={{
-          responsive: true,
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { display: false },
-            y: { display: false },
-          },
-        }}
+        options={{ responsive: true, plugins: { legend: { display: false } } }}
         height={60}
       />
     </div>
   </div>
 );
 
-// Main Dashboard Component
 const Chart = () => {
   const [mounted, setMounted] = useState(false);
-
   useEffect(() => setMounted(true), []);
-
   if (!mounted) return <p>Loading...</p>;
 
   return (
     <div className="p-5 grid grid-cols-1 lg:grid-cols-3 gap-6">
-      {/* Stock Cards Section */}
-      <div className="lg:col-span-2 flex gap-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 flex-grow">
-          {stockData.slice(0, 4).map((stock, index) => (
-            <StockCard
-              key={index}
-              symbol={stock.symbol as keyof typeof stockLogos} // Explicit cast
-              price={stock.price}
-              change={stock.change}
-              chartData={stock.chartData}
-            />
-          ))}
-        </div>
-        <div className="w-1 bg-gray-600"></div>
-      </div>
-
-      {/* Column for Two Additional Cards */}
-      <div className="space-y-4">
-        {stockData.slice(4, 6).map((stock, index) => (
-          <StockCard
-            key={index}
-            symbol={stock.symbol as keyof typeof stockLogos} // Explicit cast
-            price={stock.price}
-            change={stock.change}
-            chartData={stock.chartData}
-          />
-        ))}
-      </div>
+      {stockData.map((stock) => (
+        <StockCard key={stock.symbol} {...stock} />
+      ))}
     </div>
   );
 };
