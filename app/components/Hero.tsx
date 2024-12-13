@@ -12,7 +12,7 @@ const Hero = () => {
     <div className="relative">
       {/* Background Image */}
       <div
-        className="absolute bottom-36 right-10 sm:right-20 md:right-32 lg:right-80 w-[300px] sm:w-[400px] md:w-[500px] h-full bg-no-repeat"
+        className="absolute bottom-36 right-5 md:right-32 lg:right-80 w-[300px] sm:w-[400px] md:w-[500px] h-full bg-no-repeat"
         style={{
           backgroundImage: `url(${background.src})`,
           backgroundPosition: "top right",
@@ -21,7 +21,7 @@ const Hero = () => {
       ></div>
 
       <Container>
-        <div className="flex flex-col mt-20 pt-16 items-center justify-center space-y-6 sm:space-y-8 relative">
+        <div className="flex flex-col mt-14  md:mt-20 pt-0 md:pt-16 items-center justify-center space-y-6 sm:space-y-8 relative">
           {/* Text Content */}
           <div className="text-center lg:space-y-6 space-y-3 pt-5 mx-4 ">
             <div>
@@ -35,7 +35,7 @@ const Hero = () => {
               Trade seamlessly with cutting-edge analytics
             </h2>
 
-            <div className="flex flex-col max-w-[800px] text-[#B0B3BC] text-[10px] sm:text-[14px] lg:text-[16px] font-light justify-center items-center mx-6 sm:mx-10 lg:mx-auto">
+            <div className="flex flex-col w-[370px] text-[#B0B3BC] text-[10px] sm:text-[14px] lg:text-[16px] font-light justify-center items-center mx-6 sm:mx-10 lg:mx-auto">
               <p>
                 "Enjoy seamless trading with advanced analytics, market
                 insights, and personalized support for{" "}
@@ -46,7 +46,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex gap-x-2 justify-center">
+            <div className="flex gap-x-2 justify-center -mt-5">
               <Link
                 href="/Login"
                 className="bg-[#946CFF] text-white font-extrabold py-2 px-4 sm:px-6 rounded-md mt-4"

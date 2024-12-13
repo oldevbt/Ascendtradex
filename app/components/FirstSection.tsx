@@ -11,13 +11,13 @@ const FirstSection = () => {
     <div className=" text-white min-h-screen">
       {/* Hero Section */}
       <section className="text-center py-8 sm:py-16 mt-6 sm:mt-10 px-4 sm:px-6">
-        <h2 className="text-[#946CFF] text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">
+        <h2 className="text-[#946CFF] text-[16px] w-[400px] lg:text-2xl font-semibold mb-4 sm:mb-6">
           Discover the advantages of choosing AscendTradex
         </h2>
-        <h1 className="text-3xl text-[#D1D4DC] sm:text-4xl lg:text-5xl font-bold  mb-4 sm:mb-6">
+        <h1 className="text-2xl text-[#D1D4DC]  lg:text-5xl font-bold  mb-4 sm:mb-6">
           The world's leading online financial derivatives broker
         </h1>
-        <p className="text-white text-[17px] font-light max-w-lg sm:max-w-3xl mx-auto mb-8 sm:mb-12">
+        <p className="text-white text-[17px] text-center font-light max-w-lg sm:max-w-3xl mx-auto mb-8 sm:mb-12">
           With over 1 million satisfied clients, our track record speaks for
           itself. Benefit from our extensive experience in delivering profitable
           trading experiences, offering bespoke trading accounts, instant
