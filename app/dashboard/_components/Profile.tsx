@@ -17,7 +17,7 @@ const Profile = () => {
           <label className="block text-gray-300 text-sm mb-2">First Name</label>
           <input
             type="text"
-            value="Wisdom"
+            value=""
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
@@ -25,7 +25,7 @@ const Profile = () => {
           <label className="block text-gray-300 text-sm mb-2">Last Name</label>
           <input
             type="text"
-            value="James"
+            value=""
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
@@ -33,7 +33,7 @@ const Profile = () => {
           <label className="block text-gray-300 text-sm mb-2">Email</label>
           <input
             type="email"
-            value="soluwatist@gmail.com"
+            value=""
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
@@ -41,7 +41,7 @@ const Profile = () => {
           <label className="block text-gray-300 text-sm mb-2">Country</label>
           <input
             type="text"
-            value="Nigeria"
+            value=""
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
@@ -51,7 +51,7 @@ const Profile = () => {
           </label>
           <input
             type="text"
-            value="07040956318"
+            value=""
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
