@@ -14,7 +14,9 @@ const WalletSection = () => {
           <div className="flex flex-col items-center gap-y-2">
             <div className="flex items-center gap-x-2">
               <Image src={PurpleCircle} alt="" />
-              <h1 className="text-[#747584] text-sm">Deposit Wallet</h1>
+              <h1 className="text-[#747584] text-[8px] lg:text-sm">
+                Deposit Wallet
+              </h1>
             </div>
             <div className="text-center text-lg">$0.00</div>
           </div>
@@ -25,7 +27,9 @@ const WalletSection = () => {
           <div className="flex flex-col items-center gap-y-2">
             <div className="flex items-center gap-x-2">
               <Image src={BlueCircle} alt="" />
-              <h1 className="text-[#747584] text-sm">Interest Balances</h1>
+              <h1 className="text-[#747584] text-[8px] lg:text-sm">
+                Interest Balances
+              </h1>
             </div>
             <div className="text-center text-lg">$0.00</div>
           </div>
@@ -36,7 +40,7 @@ const WalletSection = () => {
           <div className="flex flex-col items-center gap-y-2">
             <div className="flex items-center gap-x-2">
               <Image src={PurpleCircle} alt="" />
-              <h1 className="text-[#747584] text-sm">Equity</h1>
+              <h1 className="text-[#747584] text-[8px] lg:text-sm">Equity</h1>
             </div>
             <div className="text-center text-lg">$0.00</div>
           </div>
@@ -46,7 +50,9 @@ const WalletSection = () => {
           <div className="flex flex-col items-center gap-y-2">
             <div className="flex items-center gap-x-2">
               <Image src={PurpleCircle} alt="" />
-              <h1 className="text-[#747584] text-sm">Total Withdrawal</h1>
+              <h1 className="text-[#747584] text-[8px] lg:text-sm">
+                Total Withdrawal
+              </h1>
             </div>
             <div className="text-center text-lg">$0.00</div>
           </div>

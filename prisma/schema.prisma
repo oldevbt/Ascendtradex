@@ -30,6 +30,7 @@ model User {
   resetCode              String?
   resetCodeExpiration    DateTime?
   balance                Float     @default(0.00) // Added balance field with default 0.00
+  Btcbalance                Float     @default(0.00) // Added balance field with default 0.00
 }
 
 

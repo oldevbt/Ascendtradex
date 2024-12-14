@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const BalanceCard = () => {
   const [balance, setBalance] = useState({
-    usd: 1050,
-    btc: 0.010408, // Hardcoded BTC value
+    usd: 0.0,
+    btc: 0.0, // Hardcoded BTC value
   });
 
   const fetchBalance = async () => {
@@ -14,11 +14,12 @@ const BalanceCard = () => {
         throw new Error("Failed to fetch balance");
       }
       const data = await response.json();
+      console.log(data);
 
       // Assuming the balance is part of the response. Adjust according to your API structure.
       setBalance({
-        usd: data.balanceUSD || 1050,
-        btc: 0.010408, // Hardcoded BTC value
+        usd: data.balance,
+        btc: data.Btcbalance, // Hardcoded BTC value
       });
     } catch (error) {
       console.error("Error fetching balance:", error);

@@ -2,28 +2,29 @@ import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+// Initialize Resend with your API key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Function to generate a unique email verification token
 async function generateUniqueToken(): Promise<string> {
   let isUnique = false;
-  let token: string = ""; // Initialize token before the loop
+  let token: string = "";
 
   while (!isUnique) {
-    token = crypto.randomBytes(32).toString("hex"); // Assign token inside the loop
+    token = crypto.randomBytes(32).toString("hex");
 
-    // Check if the token already exists in the database
     const existingToken = await prisma.user.findUnique({
       where: { emailVerificationToken: token },
     });
 
     if (!existingToken) {
-      // If token doesn't exist, it's unique, so set flag to true
       isUnique = true;
     }
   }
 
-  return token; // Return the unique token
+  return token;
 }
 
 export async function POST(request: Request) {
@@ -67,22 +68,14 @@ export async function POST(request: Request) {
         number,
         hashedPassword,
         emailVerificationToken,
-        isEmailVerified: false, // Mark email as not verified
+        isEmailVerified: false,
       },
     });
 
-    // Send email verification
+    // Send email verification using Resend
     const verificationUrl = `${process.env.BASE_URL}/api/verify?token=${emailVerificationToken}`;
-    const transporter = nodemailer.createTransport({
-      service: "Gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: "Info@ascendtradex.com", // Update with your verified sender email
       to: email,
       subject: "Verify your email",
       html: `
@@ -91,10 +84,7 @@ export async function POST(request: Request) {
         <a href="${verificationUrl}" target="_blank">Verify Email</a>
         <p>If you did not sign up, please ignore this email.</p>
       `,
-    };
-
-    // Send the email
-    await transporter.sendMail(mailOptions);
+    });
 
     return NextResponse.json(
       { message: "User registered. Please check your email for verification." },
