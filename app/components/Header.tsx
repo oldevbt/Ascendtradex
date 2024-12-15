@@ -19,7 +19,7 @@ const Header = () => {
           <div className="flex flex-row justify-between items-center mt-5">
             <div className="flex items-center">
               <Image src={Titan} alt="Logo" className="w-10 h-10" />
-              <h1 className="text-lg font-bold">AscendTradex</h1>
+              <h1 className="text-lg font-bold text-white">AscendTradex</h1>
             </div>
 
             {/* Desktop Navigation */}
@@ -44,7 +44,7 @@ const Header = () => {
 
               <Link
                 href="/Login"
-                className="font-bold border cursor-pointer border-[#946CFF] rounded-md py-2 px-4"
+                className="font-bold border cursor-pointer text-white border-[#946CFF] rounded-md py-2 px-4"
               >
                 Client Login
               </Link>

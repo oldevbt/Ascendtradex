@@ -134,16 +134,16 @@ const Footer = () => {
         </div>
         <ul className="list-disc text-[12px] font-light text-[#9DA6BB] space-y-3 pl-4 w-full">
           <li>
-            Copyright © : 2005-2024 TitanTradex Limited. All rights reserved.
-            TitanTradex Ltd is regulated by the Seychelles Financial Services
+            Copyright © : 2005-2024 AscendTradex Limited. All rights reserved.
+            AscendTradex Ltd is regulated by the Seychelles Financial Services
             Authority (FSA) with Securities Dealer’s license number SD018..
           </li>
           <li>
             <span className="font-semibold">Notice:</span> You must be 18 years
             old, or of legal age as determined in your country. Upon registering
-            an account with TitanTradex Ltd, you acknowledge that you are
+            an account with AscendTradex Ltd, you acknowledge that you are
             registering at your own free will, without solicitation on behalf of
-            TitanTradex Ltd.
+            AscendTradex Ltd.
           </li>
           <li>
             <span className="font-semibold">Risk Warning:</span> Trading Stocks

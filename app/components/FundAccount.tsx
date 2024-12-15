@@ -2,6 +2,7 @@ import React from "react";
 import fund from "@/assets/options/wee.png";
 import Image from "next/image";
 import { CgArrowRight } from "react-icons/cg";
+import Link from "next/link";
 
 const FundYourAccount = () => {
   return (
@@ -16,12 +17,16 @@ const FundYourAccount = () => {
             AscendTradex offers a wide range of instant, simple, and secure
             funding methods to suit your needs.
           </p>
-          <button className="mt-8 px-8 py-3 bg-[#946CFF] hover:bg-purple-700 rounded-lg shadow-lg text-white text-lg font-semibold flex items-center justify-center gap-2">
-            Start Trading Now
+          <Link
+            href="/SignUp"
+            className="mt-8 px-8  z-10 py-3 bg-[#946CFF] hover:bg-purple-700 rounded-lg shadow-lg text-white text-lg font-semibold flex items-center justify-center gap-2"
+          >
+            <button>Start Trading Now</button>
+
             <span className="material-icons">
               <CgArrowRight />
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* Right Image */}

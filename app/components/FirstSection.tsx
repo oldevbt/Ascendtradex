@@ -96,7 +96,7 @@ const FirstSection = () => {
 
           <Link
             href="/SignUp"
-            className="border bg-[#946CFF] text-white py-3 px-6 rounded-lg mt-6 font-semibold shadow-lg transition duration-200"
+            className="border z-10 bg-[#946CFF] text-white py-3 px-6 rounded-lg mt-6 font-semibold shadow-lg transition duration-200"
           >
             Start Trading
           </Link>

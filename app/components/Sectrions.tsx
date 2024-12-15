@@ -18,9 +18,12 @@ const Sectrions = () => {
             funds on the platform, and once approved, Autocopy begins. Instantly
             mirror the Lead Trader’s positions in real-time.
           </p>
-          <button className="bg-[#946CFF] hover:bg-[#7A5FE3] text-white text-sm sm:text-base py-3 px-6 rounded-lg font-medium transition">
-            <Link href="/SignUp">Create an account — It’s free</Link>
-          </button>
+
+          <Link href="/SignUp" className="z-30 hover:bg-white">
+            <button className="bg-[#946CFF] hover:bg-[#7A5FE3] text-white text-sm sm:text-base py-3 px-6 rounded-lg font-medium transition">
+              Create an account — It’s free
+            </button>
+          </Link>
         </div>
 
         {/* Right Section */}
