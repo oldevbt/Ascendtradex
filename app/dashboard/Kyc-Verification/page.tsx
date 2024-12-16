@@ -1,10 +1,37 @@
 "use client";
-import React, { useState } from "react";
-import { FaCheck } from "react-icons/fa";
-import { FaTimes } from "react-icons/fa"; // Import close icon
+import React, { useState, useEffect } from "react";
+import { FaCheck, FaTimes } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ClipLoader } from "react-spinners";
 
 const KycVerification = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [username, setUsername] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Fetch user data from the API
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch("/api/getCurrentUser");
+        const data = await response.json();
+        console.log("user name", data.firstName);
+
+        if (response.ok) {
+          setUsername(data.firstName || "User"); // Default to "User" if no name is found
+        } else {
+          console.error("Failed to fetch user data:", data.error);
+          setUsername("User"); // Fallback for error cases
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+        setUsername("User"); // Fallback for network errors
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -12,6 +39,19 @@ const KycVerification = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleSubmit = () => {
+    setIsLoading(true);
+
+    // Simulate file upload delay
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsModalOpen(false);
+      toast.success(
+        "Your document has been submitted successfully! It will be reviewed shortly."
+      );
+    }, 3000);
   };
 
   return (
@@ -28,7 +68,7 @@ const KycVerification = () => {
       <div className="flex flex-col mt-10 md:mt-40 items-center justify-center px-4">
         <div className="bg-gray-800 p-6 md:p-8 rounded-lg shadow-md max-w-3xl w-full h-auto text-left">
           <h2 className="text-2xl font-bold text-white mb-4">
-            Hey, Wisdom 👋!
+            Hey, {username} 👋!
           </h2>
           <p className="text-gray-400 mb-6 leading-relaxed">
             To ensure a secure and trustworthy environment for all our users, we
@@ -86,41 +126,6 @@ const KycVerification = () => {
                 </select>
               </div>
 
-              <div className="bg-gray-700 p-4 rounded-lg mb-6">
-                <ul className="space-y-3">
-                  <li className="flex items-center space-x-2">
-                    <div className="bg-purple-600 rounded w-6 h-6 flex items-center justify-center">
-                      <div className="text-white text-sm">
-                        <FaCheck />
-                      </div>
-                    </div>
-                    <span className="text-gray-300">
-                      Chosen credential must not be expired.
-                    </span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="bg-purple-600 rounded w-6 h-6 flex items-center justify-center">
-                      <div className="text-white text-sm">
-                        <FaCheck />
-                      </div>
-                    </div>
-                    <span className="text-gray-300">
-                      Document should be in good condition and clearly visible.
-                    </span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="bg-purple-600 rounded w-6 h-6 flex items-center justify-center">
-                      <div className="text-white text-sm">
-                        <FaCheck />
-                      </div>
-                    </div>
-                    <span className="text-gray-300">
-                      Make sure that there is no light glare on the card.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
               <div className="mb-4">
                 <label htmlFor="upload-id" className="block text-gray-300 mb-2">
                   Upload ID Here
@@ -133,17 +138,27 @@ const KycVerification = () => {
               </div>
 
               <div className="flex justify-end">
-                <button
-                  onClick={handleCloseModal}
-                  className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-white font-bold"
-                >
-                  Submit Document
-                </button>
+                {isLoading ? (
+                  <div className="flex items-center space-x-4">
+                    <ClipLoader color="#fff" size={25} />
+                    <span>Submitting...</span>
+                  </div>
+                ) : (
+                  <button
+                    onClick={handleSubmit}
+                    className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-white font-bold"
+                  >
+                    Submit Document
+                  </button>
+                )}
               </div>
             </div>
           </div>
         </div>
       )}
+
+      {/* Toast Notification */}
+      <ToastContainer />
     </div>
   );
 };

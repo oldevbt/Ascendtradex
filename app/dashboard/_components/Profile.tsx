@@ -1,8 +1,15 @@
-import React, { useState, useRef } from "react";
-import { CgClose } from "react-icons/cg";
-import { AiOutlineCheck } from "react-icons/ai"; // Import the checkmark icon
+import React, { useState, useEffect } from "react";
+import { AiOutlineCheck } from "react-icons/ai";
 
-const Profile = () => {
+interface UserData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  country: string;
+  mobileNumber: string;
+}
+
+const Profile: React.FC = () => {
   const checkboxes = [
     "Deposit",
     "Withdrawal",
@@ -10,52 +17,132 @@ const Profile = () => {
     "Account Update",
     "Login Notification",
   ];
+
+  const [formValues, setFormValues] = useState<UserData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    country: "",
+    mobileNumber: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch user data from the API
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch("/api/getCurrentUser");
+        if (!response.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+
+        const data = await response.json();
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        // Update form values with the fetched user data
+        setFormValues({
+          firstName: data.firstName || "",
+          lastName: data.lastName || "",
+          email: data.email || "",
+          country: data.country || "",
+          mobileNumber: data.number || "",
+        });
+        setError(null);
+      } catch (err: any) {
+        setError(err.message || "An error occurred");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormValues((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted with values:", formValues);
+  };
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p className="text-red-500">Error: {error}</p>;
+  }
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div className="grid grid-cols-2 gap-4 mb-6">
+        {/* First Name */}
         <div>
           <label className="block text-gray-300 text-sm mb-2">First Name</label>
           <input
             type="text"
-            value=""
+            name="firstName"
+            value={formValues.firstName}
+            onChange={handleChange}
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
+        {/* Last Name */}
         <div>
           <label className="block text-gray-300 text-sm mb-2">Last Name</label>
           <input
             type="text"
-            value=""
+            name="lastName"
+            value={formValues.lastName}
+            onChange={handleChange}
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
+        {/* Email */}
         <div>
           <label className="block text-gray-300 text-sm mb-2">Email</label>
           <input
             type="email"
-            value=""
+            name="email"
+            value={formValues.email}
+            onChange={handleChange}
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
+        {/* Country */}
         <div>
           <label className="block text-gray-300 text-sm mb-2">Country</label>
           <input
             type="text"
-            value=""
+            name="country"
+            value={formValues.country}
+            onChange={handleChange}
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
+        {/* Mobile Number */}
         <div>
           <label className="block text-gray-300 text-sm mb-2">
             Mobile Number
           </label>
           <input
             type="text"
-            value=""
+            name="mobileNumber"
+            value={formValues.mobileNumber}
+            onChange={handleChange}
             className="w-full bg-gray-800 text-white p-2 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
       </div>
+      {/* Notification Preferences */}
       <div className="grid grid-cols-2 gap-4 mt-20">
         <div>
           <h3 className="text-lg text-gray-300 mb-2">Email</h3>
@@ -94,7 +181,14 @@ const Profile = () => {
           ))}
         </div>
       </div>
-    </div>
+      {/* Submit Button */}
+      {/* <button
+        type="submit"
+        className="bg-purple-500 text-white p-2 rounded-md hover:bg-purple-600 focus:outline-none"
+      >
+        Save Changes
+      </button> */}
+    </form>
   );
 };
 
