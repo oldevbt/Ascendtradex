@@ -104,7 +104,9 @@ const SignUpPage = () => {
 
       const data = await response.json();
       toast.success("Please check your email for verification.");
-      router.push("/Verify");
+      setTimeout(() => {
+        router.push("/Verify");
+      }, 2000);
       setFormData({
         email: "",
         firstName: "",

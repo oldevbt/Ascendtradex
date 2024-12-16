@@ -34,6 +34,10 @@ const CopyTrading: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <div>
+        <div className="grid grid-cols-1"></div>
+      </div>
     </div>
   );
 };

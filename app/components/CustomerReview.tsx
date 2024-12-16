@@ -49,7 +49,7 @@ const CustomerReview = () => {
 
           <div className="w-full sm:w-[90%] md:w-[300px] bg-gray-800 p-4 rounded-lg shadow-md">
             <p className="text-sm md:text-base text-left font-light text-[#D3D3D3]">
-              "I highly recommend Titan Tradex to anyone looking to get started
+              "I highly recommend AscendTradex to anyone looking to get started
               with trading. It’s intuitive and reliable."
             </p>
             <div className="mt-8 flex items-center text-left">

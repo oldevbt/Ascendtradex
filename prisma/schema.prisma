@@ -30,8 +30,62 @@ model User {
   resetCode              String?
   resetCodeExpiration    DateTime?
   balance                Float     @default(0.00) // Added balance field with default 0.00
-  Btcbalance                Float     @default(0.00) // Added balance field with default 0.00
+  Btcbalance             Float     @default(0.00) // Added balance field with default 0.00
+
+  // Add the reverse relation to CopyTradingBalance
+  copyTradingBalances    CopyTradingBalance[] // Relation to CopyTradingBalance model
+
+  // Add the reverse relation to Signal
+  signals                Signal[]   // Relation to Signal model
 }
+
+// Copy Trading Balance Schema
+model CopyTradingBalance {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId         String    @db.ObjectId // Reference to User model
+  balance        Float     @default(0.00) // Balance for copy trading
+  planType       PlanType  // Plan type (None, Starter, Classic, Pro)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  user           User      @relation(fields: [userId], references: [id])
+}
+
+// Enum for Copy Trading Plan Types
+enum PlanType {
+  NONE
+  STARTER
+  CLASSIC
+  PRO
+}
+
+// Signals Schema
+model Signal {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId         String    @db.ObjectId // Reference to User model
+  signalType     SignalType // Signal type (MACD Pro, TX-74, GD-V4, DTS-V2, TSLA Max, GME Elite)
+  balance        Float     @default(0.00) // Balance for each signal
+  price          Float     // Price of the signal
+  strength       Float     // Strength of the signal (can be a percentage or any numerical scale)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  user           User      @relation(fields: [userId], references: [id])
+}
+
+// Enum for Signal Types
+enum SignalType {
+  MACD_PRO
+  TX_74
+  GD_V4
+  DTS_V2
+  TSLA_MAX
+  GME_ELITE
+}
+
+
+
+
 
 
 
