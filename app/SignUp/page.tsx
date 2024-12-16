@@ -161,7 +161,7 @@ const SignUpPage = () => {
               <div className="flex-1">
                 <label
                   htmlFor="email"
-                  className="block text-gray-700 font-medium mb-2"
+                  className="block text-gray-700  text-[12px] lg:text-[16px] font-medium mb-2"
                 >
                   E-Mail Address
                 </label>
@@ -169,7 +169,7 @@ const SignUpPage = () => {
                   type="email"
                   id="email"
                   placeholder="E-Mail Address"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300 text-[12.22px] lg:text-[16px] px-4 py-2 rounded-md"
                   value={formData.email}
                   onChange={handleChange}
                 />
@@ -177,7 +177,7 @@ const SignUpPage = () => {
               <div className="flex-1">
                 <label
                   htmlFor="firstName"
-                  className="block text-gray-700 font-medium mb-2"
+                  className="block text-gray-700 text-[12px] lg:text-[16px] font-medium mb-2"
                 >
                   First Name
                 </label>
@@ -185,7 +185,7 @@ const SignUpPage = () => {
                   type="text"
                   id="firstName"
                   placeholder="First Name"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300 text-[12px] lg:text-[16px] px-4 py-2 rounded-md"
                   value={formData.firstName}
                   onChange={handleChange}
                 />
@@ -197,7 +197,7 @@ const SignUpPage = () => {
               <div className="flex-1">
                 <label
                   htmlFor="lastName"
-                  className="block text-gray-700 font-medium mb-2"
+                  className="block text-gray-700 text-[12px] lg:text-[16px] font-medium mb-2"
                 >
                   Last Name
                 </label>
@@ -205,7 +205,7 @@ const SignUpPage = () => {
                   type="text"
                   id="lastName"
                   placeholder="Last Name"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300 text-[12px] lg:text-[16px] px-4 py-2 rounded-md"
                   value={formData.lastName}
                   onChange={handleChange}
                 />
@@ -213,7 +213,7 @@ const SignUpPage = () => {
               <div className="flex-1">
                 <label
                   htmlFor="country"
-                  className="block text-gray-700 font-medium mb-2"
+                  className="block text-gray-700  text-[12px] lg:text-[16px] font-medium mb-2"
                 >
                   Country
                 </label>
@@ -222,7 +222,7 @@ const SignUpPage = () => {
                   options={countryOptions}
                   value={formData.country}
                   onChange={handleCountryChange}
-                  className="w-full"
+                  className="w-full text-[12px] text-gray-700 lg:text-[16px]"
                 />
               </div>
             </div>
@@ -232,7 +232,7 @@ const SignUpPage = () => {
               <div className="flex-1">
                 <label
                   htmlFor="password"
-                  className="block text-gray-700 font-medium mb-2"
+                  className="block text-[12px] lg:text-[16px] text-gray-700 font-medium mb-2"
                 >
                   Password
                 </label>
@@ -240,7 +240,7 @@ const SignUpPage = () => {
                   type="password"
                   id="password"
                   placeholder="Password"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300  text-[12px] lg:text-[16px] px-4 py-2 rounded-md"
                   value={formData.password}
                   onChange={handleChange}
                 />
@@ -248,7 +248,7 @@ const SignUpPage = () => {
               <div className="flex-1">
                 <label
                   htmlFor="confirmPassword"
-                  className="block text-gray-700 font-medium mb-2"
+                  className="block text-gray-700 text-[12px] lg:text-[16px] font-medium mb-2"
                 >
                   Confirm Password
                 </label>
@@ -256,7 +256,7 @@ const SignUpPage = () => {
                   type="password"
                   id="confirmPassword"
                   placeholder="Confirm Password"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300 text-[12px] lg:text-[16px] px-4 py-2 rounded-md"
                   value={formData.confirmPassword}
                   onChange={handleChange}
                 />
@@ -267,7 +267,7 @@ const SignUpPage = () => {
               <div className="flex-1">
                 <label
                   htmlFor="number"
-                  className="block text-gray-700 font-medium mb-2"
+                  className="block text-[12px] lg:text-[16px] text-gray-700 font-medium mb-2"
                 >
                   Mobile Number
                 </label>
@@ -275,7 +275,7 @@ const SignUpPage = () => {
                   type="text"
                   id="number"
                   placeholder="Mobile Number"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300  text-[12px] lg:text-[16px] px-4 py-2 rounded-md"
                   value={formData.number}
                   onChange={handleChange}
                 />
@@ -285,7 +285,7 @@ const SignUpPage = () => {
               <div className="flex-1">
                 <label
                   htmlFor="referralId"
-                  className="block text-gray-700 font-medium mb-2"
+                  className="block text-gray-700 text-[12px] lg:text-[16px] font-medium mb-2"
                 >
                   Referral ID (Optional)
                 </label>
@@ -293,7 +293,7 @@ const SignUpPage = () => {
                   type="text"
                   id="referralId"
                   placeholder="Referral ID"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300 text-[12px] lg:text-[16px] px-4 py-2 rounded-md"
                   value={formData.referralId}
                   onChange={handleChange}
                 />

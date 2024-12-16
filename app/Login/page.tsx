@@ -68,7 +68,7 @@ const LoginPage = () => {
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className="block text-gray-700 font-medium mb-2"
+                className="block text-gray-700  text-[12px] lg:text-[16px]  font-medium mb-2"
               >
                 Email
               </label>
@@ -78,14 +78,14 @@ const LoginPage = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-                className="w-full border border-gray-300 text-black px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="w-full border border-gray-300 text-black  text-[12px] lg:text-[16px]  px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
               />
             </div>
             {/* Password Input */}
             <div className="mb-4">
               <label
                 htmlFor="password"
-                className="block text-gray-700 font-medium mb-2"
+                className="block text-gray-700  text-[12px] lg:text-[16px]  font-medium mb-2"
               >
                 Password
               </label>
@@ -95,7 +95,7 @@ const LoginPage = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="w-full border border-gray-300 text-black px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="w-full border border-gray-300 text-black px-4 py-2   text-[12px] lg:text-[16px] rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
               />
             </div>
             {/* Submit Button */}
@@ -122,7 +122,7 @@ const LoginPage = () => {
           </form>
           <p className="text-center text-sm text-gray-600 mt-4">
             Do not have an account?{" "}
-            <Link href="/SignUp" className="text-purple-600 hover:underline">
+            <Link href="/SignUp" className="text-purple-600  hover:underline">
               Sign Up
             </Link>
           </p>
