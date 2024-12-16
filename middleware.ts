@@ -7,8 +7,9 @@ const AUTHORIZED_ROUTES = [
   "/SignUp",
   "/ResetPassword",
   "/ChangePassword",
-  "/verify",
-  "/verified",
+  "/Verify",
+
+  "/Verified",
 ];
 type TokenType = {
   exp?: number;
