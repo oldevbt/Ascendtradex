@@ -8,7 +8,7 @@ const Layout = async ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex flex-col md:flex-row bg-gray-900 h-screen overflow-hidden">
       {/* Sidebar Section */}
-      <div className="w-full md:w-[20%] lg:w-[18%] bg-gray-800">
+      <div className="w-full md:w-[10%] lg:w-[20%] bg-gray-800">
         <Sidebar />
       </div>
 

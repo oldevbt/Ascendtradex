@@ -16,11 +16,11 @@ const TradeScanners = () => {
 
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h2 className="text-3xl font-bold mb-4">Trade Scanners</h2>
-          <p className="text-gray-400 mb-6 max-w-[500px] mx-auto lg:mx-0">
+          <p className="text-gray-400 mb-6 text-[12px] sm:text-[14px] lg:text-[16px]  max-w-[500px] mx-auto lg:mx-0">
             AscendTradex offers its members cutting-edge scanning software, the
             most advanced in its class.
           </p>
-          <p className="text-gray-400 mb-6 max-w-[500px] mx-auto lg:mx-0">
+          <p className="text-gray-400 text-[12px] sm:text-[14px] lg:text-[16px] mb-6 max-w-[500px] mx-auto lg:mx-0">
             Each of our software solutions is top-rated for Day Traders, Swing
             Trading, and Option Traders alike. Elevate your trading experience
             and witness the ease with which investing unfolds using these

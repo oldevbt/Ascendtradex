@@ -15,7 +15,9 @@ const VoiceflowWidget = () => {
     script.onload = () => {
       // Initialize the Voiceflow widget
       window.voiceflow.chat.load({
-        verify: { projectID: "674ff7d3f8ed29bcbd9e1f74" },
+        verify: {
+          projectID: "VF.DM.6762324d05e197d9cf62d9b0.232t5hK5PJxNCsiM",
+        },
         url: "https://general-runtime.voiceflow.com",
         versionID: "production",
       });

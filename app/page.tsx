@@ -25,15 +25,22 @@ import CustomerReview from "./components/CustomerReview";
 import Lovesection from "./components/Lovesection";
 import GlobalMarket from "./components/GlobalMarket";
 
+// Type definition for Notification
+type NotificationType = {
+  name: string;
+  location: string;
+  method: string;
+  time: string;
+};
+
 export default function Home() {
-  const [notification, setNotification] = useState<{
-    name: string;
-    location: string;
-    method: string;
-    time: string;
-  } | null>(null);
+  // State to hold notification
+  const [notification, setNotification] = useState<NotificationType | null>(
+    null
+  );
 
   useEffect(() => {
+    // Function to generate random notification
     const generateRandomNotification = () => {
       const names = ["John", "Sophia", "Liam", "Olivia", "Emma", "Noah"];
       const locations = [
@@ -44,6 +51,7 @@ export default function Home() {
         "Washington",
       ];
       const methods = ["Email", "Google", "GitHub"];
+
       const randomName = names[Math.floor(Math.random() * names.length)];
       const randomLocation =
         locations[Math.floor(Math.random() * locations.length)];
@@ -60,7 +68,7 @@ export default function Home() {
     // Show the first notification 5 seconds after page mounts
     const initialTimeout = setTimeout(() => {
       setNotification(generateRandomNotification());
-      setTimeout(() => setNotification(null), 3000); // Clear the notification after 5 seconds
+      setTimeout(() => setNotification(null), 3000); // Clear the notification after 3 seconds
     }, 5000);
 
     // Set up interval to show notifications every 1 minute
@@ -99,39 +107,35 @@ export default function Home() {
           <div>
             <p className="font-bold">New Registration</p>
             <p>
-              <span className="font-semibold">{notification.name}</span> from{" "}
-              <span className="font-semibold">{notification.location}</span>{" "}
-              registered on the site via{" "}
-              <span className="italic">{notification.method}</span>.
+              <span className="font-semibold">{notification?.name}</span> from
+              <span className="font-semibold"> {notification?.location}</span>
+              registered on the site via
+              <span className="italic"> {notification?.method}</span>.
             </p>
-            <p className="text-sm text-gray-300">{notification.time}</p>
+            <p className="text-sm text-gray-300">{notification?.time}</p>
           </div>
         </div>
       )}
+
       <div className="">
         <Header />
         <Hero />
       </div>
+
       <div className="">
         <FirstSection />
         <Sectrions />
-
         <Stats />
         <GlobalMarket />
-
         <Feature3 />
-
         <StepsSection />
-
         <BrokerStatement />
         <TradeScanners />
         <FundYourAccount />
         <CustomerReview />
         <VoiceflowWidget />
-
         <PaymentOptions />
         <Lovesection />
-
         <Footer />
       </div>
     </div>

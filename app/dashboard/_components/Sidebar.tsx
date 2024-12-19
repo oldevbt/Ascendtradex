@@ -36,9 +36,9 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 z-30 left-0 h-screen border-r border-gray-700 w-64 bg-gray-800 text-white flex flex-col transform ${
+        className={`fixed top-0 z-30 left-0 h-screen border-r border-gray-700 w-64 bg-gray-800 text-white flex flex-col transform transition-transform duration-300 md:translate-x-0 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-64"
-        } transition-transform md:translate-x-0`}
+        } md:translate-x-0`}
       >
         {/* Sidebar Header */}
         <div className="flex items-center justify-between p-4 border-gray-700">
@@ -57,69 +57,66 @@ const Sidebar = () => {
 
         {/* Sidebar Links */}
         <nav className="flex-1 flex-col p-4">
-          {/* Sidebar Links */}
-          <nav className="flex-1 flex-col p-4">
-            <Link
-              href="/dashboard"
-              onClick={() => setIsSidebarOpen(false)}
-              className="text-white hover:text-purple-200"
-            >
-              <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
-                <RxDashboard />
-                <span>Home</span>
-              </div>
-            </Link>
-            <Link
-              href="/dashboard/Copy-Trading"
-              className="text-white hover:text-purple-400"
-            >
-              <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
-                <RxClipboardCopy />
-                <span>Copy Trading</span>
-              </div>
-            </Link>
-            <Link
-              href="/dashboard/Signals"
-              className="text-white hover:text-purple-400"
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
-                <FaSignal />
-                <span>Signals</span>
-              </div>
-            </Link>
-            <Link
-              href="/dashboard/Live-Trading"
-              className="text-white hover:text-purple-400"
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
-                <SlGraph />
-                <span>Live Trade</span>
-              </div>
-            </Link>
-            <Link
-              href="/dashboard/Kyc-Verification"
-              className="text-white hover:text-purple-400"
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
-                <FaUserCheck />
-                <span>KYC Verification</span>
-              </div>
-            </Link>
+          <Link
+            href="/dashboard"
+            onClick={() => setIsSidebarOpen(false)}
+            className="text-white hover:text-purple-200"
+          >
+            <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
+              <RxDashboard />
+              <span>Home</span>
+            </div>
+          </Link>
+          <Link
+            href="/dashboard/Copy-Trading"
+            className="text-white hover:text-purple-400"
+          >
+            <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
+              <RxClipboardCopy />
+              <span>Copy Trading</span>
+            </div>
+          </Link>
+          <Link
+            href="/dashboard/Signals"
+            className="text-white hover:text-purple-400"
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
+              <FaSignal />
+              <span>Signals</span>
+            </div>
+          </Link>
+          <Link
+            href="/dashboard/Live-Trading"
+            className="text-white hover:text-purple-400"
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
+              <SlGraph />
+              <span>Live Trade</span>
+            </div>
+          </Link>
+          <Link
+            href="/dashboard/Kyc-Verification"
+            className="text-white hover:text-purple-400"
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            <div className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded">
+              <FaUserCheck />
+              <span>KYC Verification</span>
+            </div>
+          </Link>
 
-            <button
-              className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded w-full text-left"
-              onClick={() => {
-                setIsModalOpen(true);
-                setIsSidebarOpen(false); // Close sidebar if modal is opened
-              }}
-            >
-              <IoSettingsOutline />
-              <span>Settings</span>
-            </button>
-          </nav>
+          <button
+            className="flex items-center mb-5 space-x-3 hover:bg-gray-700 p-2 rounded w-full text-left"
+            onClick={() => {
+              setIsModalOpen(true);
+              setIsSidebarOpen(false); // Close sidebar if modal is opened
+            }}
+          >
+            <IoSettingsOutline />
+            <span>Settings</span>
+          </button>
         </nav>
 
         {/* Logout */}

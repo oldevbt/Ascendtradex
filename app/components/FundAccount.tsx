@@ -13,7 +13,7 @@ const FundYourAccount = () => {
           <h2 className="text-4xl font-bold">
             <span className="text-[#946CFF]">Fund</span> Your Account
           </h2>
-          <p className="text-gray-300 mt-4">
+          <p className="text-gray-300 mt-4 text-[12px] sm:text-[14px] lg:text-[16px]">
             AscendTradex offers a wide range of instant, simple, and secure
             funding methods to suit your needs.
           </p>

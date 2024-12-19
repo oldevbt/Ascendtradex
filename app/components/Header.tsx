@@ -52,7 +52,7 @@ const Header = () => {
             {/* Mobile Menu Icon */}
             <div className="flex lg:hidden text-3xl cursor-pointer">
               <div onClick={toggleSidebar}>
-                <div className="text-inherit">
+                <div className="text-inherit text-white">
                   <CgMenuBoxed />
                 </div>
               </div>
