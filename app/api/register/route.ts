@@ -1,8 +1,11 @@
+import React from "react";
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { render } from "@react-email/render";
+import { VerifyEmailTemplate } from "@/app/components/VerifyEmailTemplate";
 
 // Initialize Resend with your API key
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -10,18 +13,14 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // Function to generate a unique email verification token
 async function generateUniqueToken(): Promise<string> {
   let isUnique = false;
-  let token: string = "";
+  let token = "";
 
   while (!isUnique) {
     token = crypto.randomBytes(32).toString("hex");
-
     const existingToken = await prisma.user.findUnique({
       where: { emailVerificationToken: token },
     });
-
-    if (!existingToken) {
-      isUnique = true;
-    }
+    isUnique = !existingToken;
   }
 
   return token;
@@ -41,10 +40,7 @@ export async function POST(request: Request) {
     }
 
     // Check if the user already exists
-    const existingUser = await prisma.user.findUnique({
-      where: { email },
-    });
-
+    const existingUser = await prisma.user.findUnique({ where: { email } });
     if (existingUser) {
       return NextResponse.json(
         { error: "User with this email already exists." },
@@ -59,7 +55,7 @@ export async function POST(request: Request) {
     const emailVerificationToken = await generateUniqueToken();
 
     // Create the new user in the database
-    const user = await prisma.user.create({
+    await prisma.user.create({
       data: {
         email,
         firstName,
@@ -72,18 +68,25 @@ export async function POST(request: Request) {
       },
     });
 
-    // Send email verification using Resend
+    // Generate the verification URL
     const verificationUrl = `${process.env.BASE_URL}/api/verify?token=${emailVerificationToken}`;
+
+    const emailHtml: string = await render(
+      React.createElement(VerifyEmailTemplate, {
+        firstName,
+        verificationUrl,
+        // logoUrl:
+        //   "https://res.cloudinary.com/drczkfgqp/image/upload/v1733489142/modal-logo_tcqemt.png",
+        // homePageUrl: "https://articles.elizbright.com/",
+      })
+    );
+
+    // Send email verification using Resend
     await resend.emails.send({
-      from: "Info@ascendtradex.com", // Update with your verified sender email
+      from: "Info@ascendtradex.com",
       to: email,
       subject: "Verify your email",
-      html: `
-        <p>Hello ${firstName},</p>
-        <p>Thank you for registering. Please verify your email by clicking the link below:</p>
-        <a href="${verificationUrl}" target="_blank">Verify Email</a>
-        <p>If you did not sign up, please ignore this email.</p>
-      `,
+      html: emailHtml,
     });
 
     return NextResponse.json(
