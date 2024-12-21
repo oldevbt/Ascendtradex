@@ -40,6 +40,7 @@ model User {
   profit                 Float     @default(0.00) // Added field for Profit
   interestBalances       Float     @default(0.00) // Added field for Interest Balances
   totalWithdrawal        Float     @default(0.00) // Added field for Total Withdrawal
+  currentDeposit        Float     @default(0.00) // Added field for Total Withdrawal
   subscriptionType       String    @default("none") // Added field for Subscription Type
 }
 

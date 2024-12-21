@@ -25,7 +25,7 @@ const WalletSection = () => {
         const data = await response.json();
 
         setWalletData({
-          deposit: data.balance || 0,
+          deposit: data.currentDeposit || 0,
           interest: data.interestBalances || 0,
           equity: data.equity || 0,
           totalWithdrawal: data.totalWithdrawal || 0,
