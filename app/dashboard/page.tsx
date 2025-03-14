@@ -10,7 +10,8 @@ import Symbol from "./_components/SymbolOverview";
 import BalanceCard from "./_components/BalanceCard";
 import WalletSection from "./_components/WalletSection";
 
-import LitecoinImage from "@/assets/barcode/Usdt TRC20Exodus.jpg";
+import LitecoinImage from "@/assets/barcode/LITEExodus.jpg";
+import bep20Image from "@/assets/barcode/bep20.jpeg";
 import EthereumImage from "@/assets/barcode/ExodusEth.jpg";
 import UsdtTrc20Image from "@/assets/barcode/LITEExodus.jpg";
 import btcImage from "@/assets/btc.jpg";
@@ -24,6 +25,7 @@ type DepositMethods =
   | "Litecoin"
   | "ethereum"
   | "usdt-trc20"
+  | "USDT BEP20"
   | "usdt-erc20";
 
 // Wallet addresses for each method
@@ -33,6 +35,7 @@ const walletAddresses: Record<DepositMethods, string> = {
   ethereum: "0xC3070FF3E6dB5201BB36C7838c392616662D4416",
   "usdt-trc20": "TVgB9AnQsLhSvPxjqPbqCn1Lu3YM3Prq4Q",
   "usdt-erc20": "0xC3070FF3E6dB5201BB36C7838c392616662D4416",
+  "USDT BEP20": "0xC3070FF3E6dB5201BB36C7838c392616662D4416",
 };
 
 // Wallet image URLs for each method
@@ -42,6 +45,7 @@ const walletImages: Record<DepositMethods, StaticImageData> = {
   ethereum: EthereumImage,
   "usdt-trc20": UsdtTrc20Image,
   "usdt-erc20": UsdtTrc20Image,
+  "USDT BEP20": bep20Image,
 };
 
 const Dashboard = () => {
@@ -250,6 +254,8 @@ const Dashboard = () => {
                   <option value="ethereum">Ethereum</option>
                   <option value="usdt-trc20">USDT TRC20</option>
                   <option value="usdt-erc20">USDT ERC20</option>
+                  <option value="usdt-erc20">USDT ERC20</option>
+                  <option value="USDT BEP20">USDT BEP20</option>
                 </select>
               </div>
               <button
@@ -330,7 +336,6 @@ const Dashboard = () => {
                 >
                   <option value="Ethereum">Ethereum</option>
                   <option value="Bitcoin">Bitcoin</option>
-                  <option value="Usdt-Tr20">Usdt-Tr20</option>
                 </select>
               </div>
             </div>

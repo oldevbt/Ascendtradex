@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Reset from "@/assets/reset.png";
+import Link from "next/link";
 
 const VerifyPassword = () => {
   return (
@@ -62,9 +63,9 @@ const VerifyPassword = () => {
           {/* Already have an account */}
           <p className="text-center text-sm text-gray-600 mt-20">
             Already have an account?{" "}
-            <a href="#" className="text-purple-600 hover:underline">
+            <Link href="/SignUp" className="text-purple-600 hover:underline">
               Sign In
-            </a>
+            </Link>
           </p>
         </div>
       </div>
